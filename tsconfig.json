@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "allowJs": true,
+    "strict": true,
+    "jsx": "preserve",
+    "paths": {
+      "@src/*": ["./src/*"]
+    },
+  },
+  "include": ["env.d.ts"]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "vitepress-theme-ououe",
+  "version": "1.0.0",
+  "description": "A vitepress blog theme",
+  "main": "src/index.ts",
+  "types": "src/types.d.ts",
+  "scripts": {
+    "dev": "vitepress dev examples",
+    "build": "vitepress build examples",
+    "preview": "vitepress preview examples"
+  },
+  "keywords": ["vitepress", "blog", "blog-theme"],
+  "author": "tolking <qw13131wang@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "1.0.0-beta.6"
+  },
+  "dependencies": {
+    "@types/node": "^20.4.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tolking/vitepress-theme-ououe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tolking/vitepress-theme-ououe/issues"
+  },
+  "homepage": "https://github.com/tolking/vitepress-theme-ououe#readme"
+}
