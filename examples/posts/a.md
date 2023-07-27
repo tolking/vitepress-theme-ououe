@@ -1,11 +1,16 @@
 ---
-title: postst a
+title: posts a
 date: 2023-07-1
+tags:
+  - vitepress
+  - posts
+categories:
+  - summary
 ---
 
-# postst a
+This is posts a.
 
-This is postst a.
+---
 
 | Tables        |      Are      |  Cool |
 | ------------- | :-----------: | ----: |

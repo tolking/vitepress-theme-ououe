@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useData } from 'vitepress'
-// import { data } from '../posts.data'
+import { data } from '../posts.data'
 import NotFound from './NotFound.vue'
 import Page from './Page.vue'
 import Tag from './Tag.vue'
@@ -9,7 +9,8 @@ import Article from './Article.vue'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 
-// console.log('data', data, useData());
+// eslint-disable-next-line no-console
+console.log('data', data, useData())
 
 const { page, frontmatter } = useData()
 
@@ -53,8 +54,6 @@ const layout = computed(() => {
 }
 .page-enter-active,
 .page-leave-active {
-  transition:
-    transform 0.3s ease-in-out,
-    opacity 0.3s ease-in-out;
+  transition: var(--vp-transition-transform);
 }
 </style>

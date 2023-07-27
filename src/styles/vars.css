@@ -1,0 +1,8 @@
+:root {
+  --vp-size-cover-height: 25rem;
+  --vp-size-cover-blur: 10px;
+
+  --vp-transition-all: all 0.3s ease-in-out;
+  --vp-transition-transform: transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+}

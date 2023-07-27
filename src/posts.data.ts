@@ -17,6 +17,6 @@ export default createContentLoader(pattern, {
   // TODO: 统计posts数据，用于生成page页面和本地搜索
   // includeSrc: true, // include raw markdown source?
   render: true, // include rendered full page HTML?
-  // excerpt: true,    // include excerpt?
+  excerpt: true, // include excerpt?
   // transform(raw): ContentData[] {}
 })
