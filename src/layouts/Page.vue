@@ -1,23 +1,26 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useData, withBase } from 'vitepress'
+// import { computed } from 'vue'
+// import { useData, withBase } from 'vitepress'
 
-const { frontmatter, theme } = useData()
+// const { frontmatter, theme } = useData()
 
-const coverStyle = computed(() => {
-  const img = frontmatter.value?.image || theme.value?.cover
-  return { backgroundImage: `url(${withBase(img)})` }
-})
+// const coverStyle = computed(() => {
+//   const img = frontmatter.value?.image || theme.value?.cover
+//   return { backgroundImage: `url(${withBase(img)})` }
+// })
 </script>
 
 <template>
-  <section class="page">
-    <div class="page-cover">
+  <section
+    id="VPContent"
+    class="page"
+  >
+    <!-- <div class="page-cover">
       <div
         :style="coverStyle"
         class="page-bg"
       />
-    </div>
+    </div> -->
     <p>TODO: Pagination</p>
   </section>
 </template>

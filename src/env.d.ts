@@ -4,3 +4,12 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+declare module 'vitepress/dist/client/theme-default/composables/nav' {
+  export function useNav(): {
+    isScreenOpen: boolean
+    openScreen: () => void
+    closeScreen: () => void
+    toggleScreen: () => void
+  }
+}

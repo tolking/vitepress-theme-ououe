@@ -1,26 +1,37 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, provide } from 'vue'
 import { useData } from 'vitepress'
 import { data } from '../posts.data'
+import { useNav } from 'vitepress/dist/client/theme-default/composables/nav'
+import VPSkipLink from 'vitepress/dist/client/theme-default/components/VPSkipLink.vue'
+import VPNavScreen from 'vitepress/dist/client/theme-default/components/VPNavScreen.vue'
 import NotFound from './NotFound.vue'
 import Page from './Page.vue'
 import Tag from './Tag.vue'
 import Article from './Article.vue'
-import Header from '../components/Header.vue'
-import Footer from '../components/Footer.vue'
+import VPHeader from '../components/VPHeader.vue'
+import VPFooter from '../components/VPFooter.vue'
 
 // eslint-disable-next-line no-console
 console.log('data', data, useData())
 
 const { page, frontmatter } = useData()
+const { isScreenOpen, closeScreen, toggleScreen } = useNav()
 
 const layout = computed(() => {
   return frontmatter.value.layout || 'article'
 })
+
+provide('close-screen', closeScreen)
 </script>
 
 <template>
-  <Header />
+  <VPSkipLink />
+  <VPHeader
+    :is-screen-open="isScreenOpen"
+    @toggle-screen="toggleScreen"
+  />
+  <VPNavScreen :open="isScreenOpen" />
   <Transition
     name="page"
     mode="out-in"
@@ -35,7 +46,7 @@ const layout = computed(() => {
       v-else
     />
   </Transition>
-  <Footer />
+  <VPFooter />
 </template>
 
 <style>

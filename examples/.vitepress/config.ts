@@ -10,8 +10,24 @@ export default defineConfigWithTheme<Theme>({
   cleanUrls: true,
 
   themeConfig: {
-    cover: "https://picsum.photos/1920/1080?random",
+    // cover: "https://picsum.photos/1920/1080?random",
     dir: ["posts"],
+
+    nav: [
+      { text: "Home", link: "/" },
+      { text: "Tag", link: "/tag" },
+      { text: "Category", link: "/category" },
+    ],
+    socialLinks: [
+      {
+        ariaLabel: "GitHub",
+        link: "https://github.com/tolking/vitepress-theme-ououe",
+        icon: "github",
+      },
+    ],
+    search: {
+      provider: "local",
+    },
   },
 
   vite: {

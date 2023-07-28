@@ -1,6 +1,9 @@
 :root {
+  --vp-size-main-width: 68.75rem;
   --vp-size-cover-height: 25rem;
   --vp-size-cover-blur: 10px;
+
+  --vp-c-transparent: transparent;
 
   --vp-transition-all: all 0.3s ease-in-out;
   --vp-transition-transform: transform 0.3s ease-in-out,

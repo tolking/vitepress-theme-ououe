@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
-import NavLink from '../components/NavLink.vue'
+import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
 
 const { frontmatter } = useData()
 </script>
 
 <template>
   <section class="article">
-    <article class="vp-doc">
+    <article
+      id="VPContent"
+      class="vp-doc"
+    >
       <h1>{{ frontmatter.title }}</h1>
       <div>
         <span>{{ frontmatter.tags?.join('-') }}</span>/
@@ -16,12 +19,20 @@ const { frontmatter } = useData()
       <Content />
     </article>
     <nav>
-      <NavLink href="/posts/b">
+      <VPLink href="/posts/b">
         pre
-      </NavLink>
-      <NavLink href="/posts/b">
+      </VPLink>
+      <VPLink href="/posts/b">
         next
-      </NavLink>
+      </VPLink>
     </nav>
   </section>
 </template>
+
+<style scoped>
+.article {
+  margin: auto;
+  width: 100%;
+  max-width: var(--vp-size-main-width);
+}
+</style>

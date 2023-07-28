@@ -1,3 +1,5 @@
 <template>
-  <section>404</section>
+  <section id="VPContent">
+    404
+  </section>
 </template>
