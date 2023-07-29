@@ -14,6 +14,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:vuejs-accessibility/recommended',
   ],
   rules: {
     'no-console': 'error',

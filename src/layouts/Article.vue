@@ -6,7 +6,7 @@ const { frontmatter } = useData()
 </script>
 
 <template>
-  <section class="article">
+  <section class="main article">
     <article
       id="VPContent"
       class="vp-doc"
@@ -29,10 +29,4 @@ const { frontmatter } = useData()
   </section>
 </template>
 
-<style scoped>
-.article {
-  margin: auto;
-  width: 100%;
-  max-width: var(--vp-size-main-width);
-}
-</style>
+<style scoped></style>

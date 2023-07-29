@@ -10,6 +10,10 @@ export default defineConfigWithTheme<Theme>({
   cleanUrls: true,
 
   themeConfig: {
+    // logo: {
+    //   src: 'https://avatars.githubusercontent.com/u/23313167?v=4',
+    //   alt: 'logo'
+    // },
     // cover: "https://picsum.photos/1920/1080?random",
     dir: ["posts"],
 

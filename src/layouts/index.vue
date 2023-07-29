@@ -48,23 +48,3 @@ provide('close-screen', closeScreen)
   </Transition>
   <VPFooter />
 </template>
-
-<style>
-.page-enter-from {
-  transform: translate(-8px, 4px);
-  opacity: 0;
-}
-.page-leave-to {
-  transform: translate(8px, 4px);
-  opacity: 0;
-}
-.page-enter-to,
-.page-leave-from {
-  transform: translate(0);
-  opacity: 1;
-}
-.page-enter-active,
-.page-leave-active {
-  transition: var(--vp-transition-transform);
-}
-</style>

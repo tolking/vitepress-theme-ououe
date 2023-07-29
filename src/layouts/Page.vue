@@ -13,7 +13,7 @@
 <template>
   <section
     id="VPContent"
-    class="page"
+    class="main page"
   >
     <!-- <div class="page-cover">
       <div
