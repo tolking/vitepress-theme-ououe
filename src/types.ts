@@ -41,7 +41,12 @@ export interface Theme {
   /**
    * The footer configuration.
    */
-  footer?: DefaultTheme.Footer
+  footer?: {
+    /** The copyright message of the footer */
+    copyright?: string
+    /** The nav of the footer */
+    nav?: DefaultTheme.NavItemWithLink[]
+  }
   /**
    * Whether to enable the local search function?
    *

@@ -29,6 +29,13 @@ export default defineConfigWithTheme<Theme>({
         icon: "github",
       },
     ],
+    footer: {
+      // nav: [
+      //   { text: "Home", link: "/" },
+      //   { text: "GitHub", link: "https://github.com/tolking/vitepress-theme-ououe" },
+      // ],
+      copyright: "copyright © 2023",
+    },
     search: {
       provider: "local",
     },

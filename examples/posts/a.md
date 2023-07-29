@@ -93,3 +93,5 @@ export default config;
 ```
 
 :::
+
+[to posts b](/posts/b)

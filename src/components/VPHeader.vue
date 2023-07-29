@@ -23,10 +23,7 @@ const { site, theme } = useData()
 <template>
   <header class="header">
     <div class="main header-content">
-      <VPLink
-        tag="h1"
-        class="header-logo"
-      >
+      <VPLink class="header-logo">
         <VPImage
           v-if="theme.logo"
           :image="theme.logo"

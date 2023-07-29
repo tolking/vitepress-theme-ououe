@@ -1,7 +1,57 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useData } from 'vitepress'
+import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
+
+const { theme, frontmatter } = useData()
+</script>
 
 <template>
-  <footer>
-    <p>footer</p>
+  <footer
+    v-if="theme.footer && frontmatter.footer !== false"
+    :class="theme.footer.nav && 'is-nav'"
+    class="main footer"
+  >
+    <p
+      v-if="theme.footer.copyright"
+      class="copyright"
+      v-html="theme.footer.copyright"
+    />
+    <nav
+      v-if="theme.footer.nav"
+      class="footer-nav"
+    >
+      <VPLink
+        v-for="item in theme.footer.nav"
+        :key="item.text"
+        :href="item.link"
+        :target="item.target"
+        :rel="item.rel"
+      >
+        {{ item.text }}
+      </VPLink>
+    </nav>
   </footer>
 </template>
+
+<style scoped>
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--vp-size-space) + 0.3rem) 0;
+}
+.footer.is-nav {
+  justify-content: space-between;
+}
+.footer .copyright {
+  color: var(--vp-c-text-2);
+}
+.footer .footer-nav {
+  display: flex;
+  align-items: center;
+}
+.footer .footer-nav :deep(.VPLink) {
+  margin-left: calc(var(--vp-size-space) * 2);
+  color: var(--vp-c-brand);
+}
+</style>
