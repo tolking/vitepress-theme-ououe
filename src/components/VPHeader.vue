@@ -8,6 +8,7 @@ import VPNavBarTranslations from 'vitepress/dist/client/theme-default/components
 import VPNavBarAppearance from 'vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue'
 import VPNavBarSocialLinks from 'vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue'
 import VPNavBarHamburger from 'vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue'
+import type { Theme } from '../types'
 
 defineProps<{
   isScreenOpen: boolean
@@ -17,7 +18,7 @@ defineEmits<{
   (e: 'toggle-screen'): void
 }>()
 
-const { site, theme } = useData()
+const { site, theme } = useData<Theme>()
 </script>
 
 <template>

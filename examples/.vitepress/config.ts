@@ -8,6 +8,7 @@ export default defineConfigWithTheme<Theme>({
   // srcDir: 'posts',
   // base: '/base/',
   cleanUrls: true,
+  lastUpdated: true,
 
   themeConfig: {
     // logo: {
@@ -22,6 +23,8 @@ export default defineConfigWithTheme<Theme>({
       { text: "Tag", link: "/tag" },
       { text: "Category", link: "/category" },
     ],
+    tag: "/tag",
+    category: "/category",
     socialLinks: [
       {
         ariaLabel: "GitHub",
@@ -29,6 +32,15 @@ export default defineConfigWithTheme<Theme>({
         icon: "github",
       },
     ],
+    createTime: {
+      text: "Create Time",
+      format: (date) => new Date(date).toLocaleDateString(),
+    },
+    lastUpdated: {
+      text: "Last Updated",
+      format: (date) => new Date(date).toLocaleDateString(),
+    },
+    // readingProgress: 'bottom',
     footer: {
       // nav: [
       //   { text: "Home", link: "/" },

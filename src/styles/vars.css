@@ -9,4 +9,8 @@
   --vp-transition-all: all 0.3s ease-in-out;
   --vp-transition-transform: transform 0.3s ease-in-out,
     opacity 0.3s ease-in-out;
+
+  /* the vars of reading progress */
+  --vp-reading-size: 3px;
+  --vp-reading-gradient: none;
 }

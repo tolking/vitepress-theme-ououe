@@ -27,17 +27,53 @@ export interface Theme {
    */
   dir?: string[]
   /**
-   * Whether you need the statistics of the label data?
+   * Link of the tag page
    *
-   * @default true
+   * Before using, you need to add a files to your directory. (eq. tag.md -> '/tag')
+   *
+   * ```
+   * ---
+   * layout: tag
+   * ---
+   * ```
+   *
+   * @example '/tag'
    */
-  tag?: boolean
+  tag?: string
   /**
-   * Whether you need the statistics of the category data?
+   * Link of the tag page
    *
-   * @default true
+   * Before using, you need to add a files to your directory. (eq. category.md -> '/category')
+   *
+   * ```
+   * ---
+   * layout: category
+   * ---
+   * ```
+   *
+   * @example '/category'
    */
-  category?: boolean
+  category?: string
+  /**
+   * Whether to show the create time?
+   *
+   * @example { text: 'Create Time', format(date) { ... }}
+   */
+  createTime?: TimeFormatOptions
+  /**
+   * Whether to show the last updated time?
+   *
+   * Before using, you need add `lastUpdated` options to your config
+   *
+   * @example { text: 'Last updated', format(date) { ... }}
+   */
+  lastUpdated?: TimeFormatOptions
+  /**
+   * Whether to show the reading progress bar?
+   *
+   * @default 'top'
+   */
+  readingProgress?: ReadingProgress
   /**
    * The footer configuration.
    */
@@ -56,3 +92,12 @@ export interface Theme {
     | { provider: 'local'; options?: DefaultTheme.LocalSearchOptions }
     | { provider: 'algolia'; options: DefaultTheme.AlgoliaSearchOptions }
 }
+
+interface TimeFormatOptions {
+  /** Set custom time text, **required** */
+  text: string
+  /** Set custom time format, Default transition to local timestamp */
+  format?: (date: string | number) => string
+}
+
+export type ReadingProgress = boolean | 'top' | 'bottom' | 'left' | 'right'

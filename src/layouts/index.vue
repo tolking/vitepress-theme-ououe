@@ -11,11 +11,12 @@ import Tag from './Tag.vue'
 import Article from './Article.vue'
 import VPHeader from '../components/VPHeader.vue'
 import VPFooter from '../components/VPFooter.vue'
+import type { Theme } from '../types'
 
 // eslint-disable-next-line no-console
 console.log('data', data, useData())
 
-const { page, frontmatter } = useData()
+const { page, frontmatter } = useData<Theme>()
 const { isScreenOpen, closeScreen, toggleScreen } = useNav()
 
 const layout = computed(() => {

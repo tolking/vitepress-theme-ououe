@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
+import type { Theme } from '../types'
 
-const { theme, frontmatter } = useData()
+const { theme, frontmatter } = useData<Theme>()
 </script>
 
 <template>
@@ -14,8 +15,9 @@ const { theme, frontmatter } = useData()
     <p
       v-if="theme.footer.copyright"
       class="copyright"
-      v-html="theme.footer.copyright"
-    />
+    >
+      {{ theme.footer.copyright }}
+    </p>
     <nav
       v-if="theme.footer.nav"
       class="footer-nav"
