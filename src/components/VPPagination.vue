@@ -102,6 +102,7 @@ function findPageInfo(n: number) {
       :href="prev.link"
       :target="prev.target"
       :rel="prev.rel"
+      class="pagination-item"
     >
       {{ pagination.prev }}
     </VPLink>
@@ -112,6 +113,7 @@ function findPageInfo(n: number) {
       :target="item.target"
       :rel="item.rel"
       :class="{ active: item.link === route.path }"
+      class="pagination-item"
     >
       {{ item.text }}
     </VPLink>
@@ -120,8 +122,59 @@ function findPageInfo(n: number) {
       :href="next.link"
       :target="next.target"
       :rel="next.rel"
+      class="pagination-item"
     >
       {{ pagination.next }}
     </VPLink>
   </nav>
 </template>
+
+<style scoped>
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vp-size-space);
+  padding: 1rem 0 2rem;
+}
+.pagination .pagination-item {
+  --vp-button-border: var(--vp-button-alt-border);
+  --vp-button-bg: var(--vp-button-alt-bg);
+  --vp-button-text: var(--vp-button-alt-text);
+  --vp-button-hover-border: var(--vp-button-alt-hover-border);
+  --vp-button-hover-bg: var(--vp-button-alt-hover-bg);
+  --vp-button-hover-text: var(--vp-button-alt-hover-text);
+  --vp-button-active-border: var(--vp-button-alt-active-border);
+  --vp-button-active-bg: var(--vp-button-alt-active-bg);
+  --vp-button-active-text: var(--vp-button-alt-active-text);
+}
+.pagination .pagination-item.active {
+  --vp-button-border: var(--vp-button-brand-border);
+  --vp-button-bg: var(--vp-button-brand-bg);
+  --vp-button-text: var(--vp-button-brand-text);
+  --vp-button-hover-border: var(--vp-button-brand-hover-border);
+  --vp-button-hover-bg: var(--vp-button-brand-hover-bg);
+  --vp-button-hover-text: var(--vp-button-brand-hover-text);
+  --vp-button-active-border: var(--vp-button-brand-active-border);
+  --vp-button-active-bg: var(--vp-button-brand-active-bg);
+  --vp-button-active-text: var(--vp-button-brand-active-text);
+}
+.pagination .pagination-item {
+  padding: 0.4rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--vp-button-border);
+  background-color: var(--vp-button-bg);
+  color: var(--vp-button-text);
+  transition: var(--vp-transition-all);
+}
+.pagination .pagination-item:hover {
+  border-color: var(--vp-button-hover-border);
+  background-color: var(--vp-button-hover-bg);
+  color: var(--vp-button-hover-text);
+}
+.pagination .pagination-item:active {
+  border-color: var(--vp-button-active-border);
+  background-color: var(--vp-button-active-bg);
+  color: var(--vp-button-active-text);
+}
+</style>
