@@ -5,3 +5,7 @@ export function toArray<T extends any | any[]>(
   if (value === undefined) return <any>[]
   return Array.isArray(value) ? value : ([value] as any)
 }
+
+export function isFunction(value: any): value is (...args: any[]) => any {
+  return typeof value === 'function'
+}

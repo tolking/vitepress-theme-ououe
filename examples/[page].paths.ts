@@ -2,18 +2,17 @@ import fs from 'fs'
 
 export default {
   paths() {
-    return fs
-      .readdirSync(__dirname)
-      .filter((file) => file.startsWith('['))
-      .map((pkg, index) => {
-        // console.log('pkg', pkg);
+    const limit = 12 // Item count of each page
+    const files = fs
+      .readdirSync('examples/posts')
+      .filter((file) => !/^\[[^]*]\]\./.test(file))
+    const total = Math.ceil(files.length / limit)
 
-        // TODO: 根据当前也数据的条数生成page
-        if (index) {
-          return { params: { page: 'page/' + index, index, limit: 12 } }
-        } else {
-          return { params: { page: 'index', index, limit: 12 } }
-        }
-      })
+    return Array.from({ length: total }).map((_, index) => {
+      const current = index + 1
+      const page = current === 1 ? 'index' : `page-${current}`
+
+      return { params: { page, current, limit } }
+    })
   },
 }

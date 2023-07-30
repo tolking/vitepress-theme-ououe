@@ -47,19 +47,19 @@ const lastUpdated = computed(() => {
           class="header-nav"
         >
           <VPLink
-            v-for="item in categories"
-            :key="item"
-            :href="`${theme.category}?t=${item}`"
+            v-for="category in categories"
+            :key="category"
+            :href="`${theme.category}?t=${category}`"
           >
-            {{ item }}
+            {{ category }}
           </VPLink>
           <span v-if="tags.length && categories.length">/</span>
           <VPLink
-            v-for="item in tags"
-            :key="item"
-            :href="`${theme.tag}?t=${item}`"
+            v-for="tag in tags"
+            :key="tag"
+            :href="`${theme.tag}?t=${tag}`"
           >
-            {{ item }}
+            {{ tag }}
           </VPLink>
         </nav>
       </div>

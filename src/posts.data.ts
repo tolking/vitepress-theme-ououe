@@ -1,22 +1,56 @@
 import { createContentLoader } from 'vitepress'
-import type { SiteConfig, ContentData } from 'vitepress'
-import type { Theme } from './types'
+import { toArray } from './utils/index'
+import type { SiteConfig } from 'vitepress'
+import type { Theme, PostsItem } from './types'
 
-declare const data: ContentData[]
+declare const data: PostsItem[]
 export { data }
 
 type GlobalThis = typeof globalThis & { VITEPRESS_CONFIG: SiteConfig<Theme> }
 
 const config = (globalThis as GlobalThis).VITEPRESS_CONFIG
-const themeConfig = config.site.themeConfig
-const pattern = themeConfig.dir?.length
-  ? themeConfig.dir.map((item) => `${item}/*.md`)
+const pagination =
+  config.site.themeConfig.pagination &&
+  toArray(config.site.themeConfig.pagination)
+const postsDir = pagination?.reduce((all, item) => {
+  if (Array.isArray(item.dir)) {
+    all = all.concat(item.dir)
+  } else if (item.dir) {
+    all.push(item.dir)
+  }
+  return all
+}, [] as string[])
+const pattern = postsDir?.length
+  ? postsDir.map((item) => `${item}/*.md`)
   : `${config.userConfig.srcDir || '**'}/*.md`
 
 export default createContentLoader(pattern, {
-  // TODO: 统计posts数据，用于生成page页面和本地搜索
-  // includeSrc: true, // include raw markdown source?
-  render: true, // include rendered full page HTML?
-  excerpt: true, // include excerpt?
-  // transform(raw): ContentData[] {}
+  excerpt: true,
+  transform(raw): PostsItem[] {
+    const posts: PostsItem[] = []
+
+    for (let i = 0; i < raw.length; i++) {
+      const { excerpt, frontmatter, url } = raw[i]
+
+      if (
+        /\[[^\]]*\]\./.test(url) ||
+        ['page', 'tag', 'category'].includes(frontmatter.layout)
+      ) {
+        continue
+      }
+
+      const tags = toArray(frontmatter.tags || frontmatter.tag)
+      const categories = toArray(frontmatter.categories || frontmatter.category)
+
+      posts.push({
+        ...frontmatter,
+        tags,
+        categories,
+        url,
+        excerpt,
+      })
+    }
+
+    return posts
+  },
 })

@@ -16,8 +16,6 @@ export default defineConfigWithTheme<Theme>({
     //   alt: 'logo'
     // },
     // cover: "https://picsum.photos/1920/1080?random",
-    dir: ["posts"],
-
     nav: [
       { text: "Home", link: "/" },
       { text: "Tag", link: "/tag" },
@@ -32,6 +30,12 @@ export default defineConfigWithTheme<Theme>({
         icon: "github",
       },
     ],
+    pagination: {
+      prev: "<-",
+      next: "->",
+      // match: (path) => /^\/($|index|page-)/.test(path),
+      // filter: (page) => page.home,
+    },
     createTime: {
       text: "Create Time",
       format: (date) => new Date(date).toLocaleDateString(),

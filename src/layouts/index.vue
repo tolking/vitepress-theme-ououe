@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed, provide } from 'vue'
 import { useData } from 'vitepress'
-import { data } from '../posts.data'
 import { useNav } from 'vitepress/dist/client/theme-default/composables/nav'
 import VPSkipLink from 'vitepress/dist/client/theme-default/components/VPSkipLink.vue'
 import VPNavScreen from 'vitepress/dist/client/theme-default/components/VPNavScreen.vue'
@@ -12,9 +11,6 @@ import Article from './Article.vue'
 import VPHeader from '../components/VPHeader.vue'
 import VPFooter from '../components/VPFooter.vue'
 import type { Theme } from '../types'
-
-// eslint-disable-next-line no-console
-console.log('data', data, useData())
 
 const { page, frontmatter } = useData<Theme>()
 const { isScreenOpen, closeScreen, toggleScreen } = useNav()
