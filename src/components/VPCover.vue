@@ -1,0 +1,119 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useData, withBase } from 'vitepress'
+import type { Theme } from '../types'
+
+const props = defineProps<{
+  title?: string
+  description?: string
+}>()
+
+const { frontmatter, theme, site, isDark } = useData<Theme>()
+
+const title = computed(() => {
+  return frontmatter.value.title ?? props.title ?? site.value.title
+})
+const description = computed(() => {
+  return (
+    frontmatter.value.description ?? props.description ?? site.value.description
+  )
+})
+const coverStyle = computed(() => {
+  const image = frontmatter.value?.image ?? theme.value.cover
+  let src = undefined
+
+  if (!image) {
+    src = ''
+  } else if (typeof image === 'string') {
+    src = image
+  } else if ('src' in image) {
+    src = image.src
+  } else if ('dark' in image || 'light' in image) {
+    src = isDark.value ? image?.dark || '' : image?.light || ''
+  }
+
+  return src ? { backgroundImage: `url(${withBase(src)})` } : undefined
+})
+</script>
+
+<template>
+  <section
+    :class="{ 'with-cover': coverStyle }"
+    class="cover"
+  >
+    <div
+      v-if="coverStyle"
+      :style="coverStyle"
+      class="cover-bg"
+    />
+    <hgroup class="cover-title">
+      <h1 class="title">
+        {{ title }}
+      </h1>
+      <slot>
+        <p class="description">
+          {{ description }}
+        </p>
+      </slot>
+    </hgroup>
+  </section>
+</template>
+
+<style scoped>
+.cover {
+  position: relative;
+  width: 100%;
+  height: var(--vp-size-cover-height);
+  overflow: hidden;
+}
+.cover .cover-bg {
+  position: absolute;
+  top: calc(var(--vp-size-cover-blur) * -2);
+  bottom: calc(var(--vp-size-cover-blur) * -2);
+  left: calc(var(--vp-size-cover-blur) * -2);
+  right: calc(var(--vp-size-cover-blur) * -2);
+  background-color: var(--vp-c-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: blur(var(--vp-size-cover-blur)) saturate(80%);
+  will-change: background-image;
+  transition: var(--vp-transition-all);
+}
+.cover .cover-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: var(--vp-nav-height);
+  height: 100%;
+}
+.cover .cover-title .title {
+  max-width: 80%;
+  font-size: clamp(2rem, 1.636rem + 1.82vw, 3rem);
+  line-height: 2;
+  font-weight: 800;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-shadow:
+    0px 0px 0 var(--vp-c-text-1),
+    1px 1px 2px var(--vp-c-text-2),
+    2px 2px 0 var(--vp-c-text-3);
+}
+.cover .cover-title .description {
+  max-width: 80%;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.cover.with-cover {
+  height: var(--vp-size-cover-img-height);
+}
+.cover.with-cover .cover-title,
+.cover.with-cover + :deep(.main) {
+  position: relative;
+}
+</style>

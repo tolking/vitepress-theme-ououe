@@ -15,7 +15,10 @@ export default defineConfigWithTheme<Theme>({
     //   src: 'https://avatars.githubusercontent.com/u/23313167?v=4',
     //   alt: 'logo'
     // },
-    // cover: "https://picsum.photos/1920/1080?random",
+    cover: {
+      src: "https://picsum.photos/1920/1080?random",
+      alt: "cover image",
+    },
     nav: [
       { text: "Home", link: "/" },
       { text: "Tag", link: "/tag" },

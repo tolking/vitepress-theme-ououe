@@ -9,6 +9,12 @@ export interface Theme {
    */
   logo?: DefaultTheme.ThemeableImage
   /**
+   * The cover image of pagination, tag, category pages
+   *
+   * @example { src: '/public/cover.png', alt: 'cover image' }
+   */
+  cover?: DefaultTheme.ThemeableImage
+  /**
    * The nav items.
    */
   nav?: DefaultTheme.NavItem[]
