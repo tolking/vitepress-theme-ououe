@@ -4,6 +4,7 @@ import { useData } from 'vitepress'
 import { toArray } from '../utils/index'
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
 import VPCover from '../components/VPCover.vue'
+import VPNavTags from '../components/VPNavTags.vue'
 import VPReadingProgress from '../components/VPReadingProgress.vue'
 import type { Theme } from '../types'
 
@@ -36,26 +37,11 @@ const lastUpdated = computed(() => {
 <template>
   <section class="article">
     <VPCover>
-      <nav
-        v-if="tags.length || categories.length"
-        class="header-nav"
-      >
-        <VPLink
-          v-for="category in categories"
-          :key="category"
-          :href="`${theme.category}?t=${category}`"
-        >
-          {{ category }}
-        </VPLink>
-        <span v-if="tags.length && categories.length">/</span>
-        <VPLink
-          v-for="tag in tags"
-          :key="tag"
-          :href="`${theme.tag}?t=${tag}`"
-        >
-          {{ tag }}
-        </VPLink>
-      </nav>
+      <VPNavTags
+        :tags="tags"
+        :categories="categories"
+        class="article-tags"
+      />
     </VPCover>
     <article
       id="VPContent"
@@ -89,16 +75,10 @@ const lastUpdated = computed(() => {
 </template>
 
 <style scoped>
-.article .header-nav {
+.article .article-tags {
   display: flex;
   justify-content: center;
   gap: var(--vp-size-space);
-}
-.article .header-nav .link {
-  transition: var(--vp-transition-color);
-}
-.article .header-nav .link:hover {
-  color: var(--vp-c-brand);
 }
 .article .vp-doc {
   padding: calc(var(--vp-size-space) * 2) 0;

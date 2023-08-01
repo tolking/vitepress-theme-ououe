@@ -85,7 +85,6 @@ const coverStyle = computed(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: var(--vp-nav-height);
   height: 100%;
 }
 .cover .cover-title .title {
