@@ -1,3 +1,5 @@
+export * from './Classifiable'
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export function toArray<T extends any | any[]>(
   value: T,

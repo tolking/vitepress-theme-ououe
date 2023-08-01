@@ -95,7 +95,7 @@ function findPageInfo(n: number) {
 <template>
   <nav
     v-if="pagination"
-    class="pagination"
+    class="main pagination"
   >
     <VPLink
       v-if="pagination.current !== 1"
