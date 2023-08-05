@@ -18,20 +18,24 @@ const { theme, frontmatter } = useData<Theme>()
     >
       {{ theme.footer.copyright }}
     </p>
-    <nav
+    <TransitionGroup
       v-if="theme.footer.nav"
+      name="posts"
+      tag="nav"
+      appear
       class="footer-nav"
     >
       <VPLink
-        v-for="item in theme.footer.nav"
+        v-for="(item, index) in theme.footer.nav"
         :key="item.text"
         :href="item.link"
         :target="item.target"
         :rel="item.rel"
+        :style="{ '--vp-posts-delay': `${index / 10}s` }"
       >
         {{ item.text }}
       </VPLink>
-    </nav>
+    </TransitionGroup>
   </footer>
 </template>
 

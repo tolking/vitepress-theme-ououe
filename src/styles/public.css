@@ -80,3 +80,21 @@ button:focus-visible {
 .posts-leave-active {
   position: absolute;
 }
+
+.scale-enter-from,
+.scale-leave-to {
+  transform: scale(0);
+}
+.scale-enter-to,
+.scale-leave-from {
+  transform: scale(1);
+}
+.posts-move,
+.scale-enter-active,
+.scale-leave-active {
+  transition: transform var(--vp-transition-duration)
+    cubic-bezier(0.15, 0.32, 0.61, 1.31);
+}
+.scale-leave-active {
+  position: absolute;
+}

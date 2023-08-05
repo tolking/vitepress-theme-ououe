@@ -93,8 +93,11 @@ function findPageInfo(n: number) {
 </script>
 
 <template>
-  <nav
+  <TransitionGroup
     v-if="pagination"
+    name="scale"
+    tag="nav"
+    appear
     class="main pagination"
   >
     <VPLink
@@ -126,7 +129,7 @@ function findPageInfo(n: number) {
     >
       {{ pagination.next }}
     </VPLink>
-  </nav>
+  </TransitionGroup>
 </template>
 
 <style scoped>

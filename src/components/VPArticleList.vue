@@ -25,6 +25,7 @@ defineProps<{
       <VPLink
         v-if="item?.image"
         :href="item.url"
+        :title="item.title"
         class="item-image"
       >
         <VPImage

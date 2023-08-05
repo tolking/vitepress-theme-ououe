@@ -10,7 +10,10 @@ const { list } = usePagination()
 <template>
   <section class="page">
     <VPCover />
-    <VPArticleList :list="list" />
+    <VPArticleList
+      id="VPContent"
+      :list="list"
+    />
     <VPPagination />
   </section>
 </template>

@@ -13,8 +13,11 @@ const { theme } = useData<Theme>()
 </script>
 
 <template>
-  <nav
+  <TransitionGroup
     v-if="tags?.length || categories?.length"
+    name="scale"
+    tag="nav"
+    appear
     class="nav-tags"
   >
     <VPLink
@@ -38,7 +41,7 @@ const { theme } = useData<Theme>()
     >
       {{ tag }}
     </VPLink>
-  </nav>
+  </TransitionGroup>
 </template>
 
 <style scoped>

@@ -47,13 +47,28 @@ const coverStyle = computed(() => {
       class="cover-bg"
     />
     <hgroup class="cover-title">
-      <h1 class="title">
-        {{ title }}
-      </h1>
+      <Transition
+        name="scale"
+        mode="out-in"
+        appear
+      >
+        <h1
+          :key="title"
+          class="title"
+        >
+          {{ title }}
+        </h1>
+      </Transition>
       <slot>
-        <p class="description">
-          {{ description }}
-        </p>
+        <Transition
+          name="posts"
+          mode="out-in"
+          appear
+        >
+          <p class="description">
+            {{ description }}
+          </p>
+        </Transition>
       </slot>
     </hgroup>
   </section>

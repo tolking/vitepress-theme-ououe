@@ -8,20 +8,28 @@ import VPArticleList from '../components/VPArticleList.vue'
 import type { Theme } from '../types'
 
 const route = useRoute()
-const { frontmatter } = useData<Theme>()
+const { frontmatter, theme } = useData<Theme>()
 const { current, list, posts } = useTag()
 
 const title = computed(() => {
-  const layout: string = frontmatter.value.layout
-  return layout.replace(/^([a-z])/, (_, i) => i.toUpperCase())
+  const nav = theme.value.nav?.find((item) => {
+    if ('link' in item) {
+      return item.link === route.path
+    }
+    return false
+  })
+
+  if (nav) {
+    return nav.text
+  } else {
+    const layout: string = frontmatter.value.layout
+    return layout.replace(/^([a-z])/, (_, i) => i.toUpperCase())
+  }
 })
 </script>
 
 <template>
-  <section
-    :key="route.path"
-    class="tag"
-  >
+  <section class="tag">
     <VPCover
       :title="title"
       description=""
