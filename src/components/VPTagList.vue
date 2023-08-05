@@ -14,15 +14,19 @@ function handleChange(event: Event) {
 </script>
 
 <template>
-  <section
+  <TransitionGroup
+    name="posts"
+    tag="section"
+    appear
     role="radiogroup"
     class="main tag-list"
   >
     <label
-      v-for="(count, tag) in list"
+      v-for="(count, tag, index) in list"
       :key="tag"
       :for="`id__${tag}`"
       :class="{ active: tag === modelValue }"
+      :style="{ '--vp-posts-delay': `${index / 10}s` }"
       class="item"
     >
       <input
@@ -39,7 +43,7 @@ function handleChange(event: Event) {
         <span class="count">({{ count }})</span>
       </div>
     </label>
-  </section>
+  </TransitionGroup>
 </template>
 
 <style scoped>

@@ -60,7 +60,6 @@ const { site, theme } = useData<Theme>()
   left: 0;
   right: 0;
   z-index: var(--vp-z-index-nav);
-  height: var(--vp-nav-height);
   border-bottom: 1px solid var(--vp-c-border);
   background-image: radial-gradient(
     var(--vp-c-transparent, transparent) 1px,

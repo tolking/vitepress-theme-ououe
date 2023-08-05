@@ -154,6 +154,7 @@ export interface PostsItem {
   description?: string
   excerpt?: string
   date?: string
+  image?: DefaultTheme.ThemeableImage
   tags: string[]
   categories: string[]
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

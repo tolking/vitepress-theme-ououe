@@ -1,5 +1,5 @@
-import { computed, ref } from 'vue'
-import { useData } from 'vitepress'
+import { computed, ref, watch } from 'vue'
+import { useData, inBrowser, useRoute } from 'vitepress'
 import { data } from '../posts.data'
 import { Classifiable } from '../utils/index'
 import type { Theme } from '../types'
@@ -7,9 +7,10 @@ import type { Theme } from '../types'
 const classifiable = new Classifiable(data)
 
 export function useTag() {
-  const { frontmatter } = useData<Theme>()
+  const route = useRoute()
+  const { frontmatter, theme } = useData<Theme>()
 
-  const current = ref<string>()
+  const current = ref<string>(getQuery())
 
   const list = computed(() => {
     switch (frontmatter.value.layout) {
@@ -34,6 +35,24 @@ export function useTag() {
         return undefined
     }
   })
+
+  watch(
+    () => route.path,
+    (value) => {
+      if ([theme.value.tag, theme.value.category].includes(value)) {
+        current.value = getQuery()
+      }
+    },
+  )
+
+  function getQuery() {
+    if (!inBrowser) return ''
+    const { search } = new URL(location.href)
+    const searchParams = new URLSearchParams(search)
+    const tag = searchParams.get('t')
+
+    return tag || ''
+  }
 
   return {
     current,

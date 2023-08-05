@@ -1,6 +1,7 @@
 ---
 title: posts a
 date: 2023-07-1
+image: https://picsum.photos/536/354?random&date=2023-07-1
 tags:
   - vitepress
   - posts

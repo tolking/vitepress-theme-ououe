@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useData } from 'vitepress'
+import { usePrevNext } from '../composables/index'
 import { toArray } from '../utils/index'
-import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
 import VPCover from '../components/VPCover.vue'
 import VPNavTags from '../components/VPNavTags.vue'
+import VPArticleList from '../components/VPArticleList.vue'
 import VPReadingProgress from '../components/VPReadingProgress.vue'
 import type { Theme } from '../types'
 
 const { frontmatter, theme, lang, page } = useData<Theme>()
+const list = usePrevNext()
 
 const tags = computed(() => {
   return toArray<string[]>(frontmatter.value.tags || frontmatter.value.tag)
@@ -40,6 +42,7 @@ const lastUpdated = computed(() => {
       <VPNavTags
         :tags="tags"
         :categories="categories"
+        separator
         class="article-tags"
       />
     </VPCover>
@@ -62,26 +65,21 @@ const lastUpdated = computed(() => {
         </p>
       </footer>
     </article>
-    <nav class="main">
-      <VPLink href="/posts/b">
-        pre
-      </VPLink>
-      <VPLink href="/posts/b">
-        next
-      </VPLink>
-    </nav>
+    <VPArticleList
+      :list="list"
+      class="article-pagination"
+    />
     <VPReadingProgress />
   </section>
 </template>
 
 <style scoped>
 .article .article-tags {
-  display: flex;
-  justify-content: center;
-  gap: var(--vp-size-space);
+  filter: drop-shadow(0px 2px 3px var(--vp-c-text-2));
 }
 .article .vp-doc {
-  padding: calc(var(--vp-size-space) * 2) 0;
+  padding-top: calc(var(--vp-size-space) * 2);
+  padding-bottom: calc(var(--vp-size-space) * 2);
 }
 .article .vp-doc .article-time {
   margin-top: 1rem;
@@ -91,5 +89,22 @@ const lastUpdated = computed(() => {
 }
 .article .article-time p {
   margin: 0;
+}
+.article .article-pagination {
+  --vp-posts-span: 6;
+  --vp-posts-direction: row-reverse;
+  --vp-posts-height: 10rem;
+}
+.article .article-pagination :deep(.article-item:first-child) {
+  --vp-posts-direction: row;
+}
+.article .article-pagination :deep(.article-item:first-child:last-child) {
+  --vp-posts-span: 6;
+}
+
+@media (min-width: 768px) {
+  .article .article-pagination {
+    --vp-posts-span: 3;
+  }
 }
 </style>

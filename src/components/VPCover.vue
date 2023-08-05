@@ -90,22 +90,22 @@ const coverStyle = computed(() => {
 .cover .cover-title .title {
   max-width: 80%;
   font-size: clamp(2rem, 1.636rem + 1.82vw, 3rem);
+  color: var(--vp-c-text-1);
   line-height: 2;
   font-weight: 800;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  text-shadow:
-    0px 0px 0 var(--vp-c-text-1),
-    1px 1px 2px var(--vp-c-text-2),
-    2px 2px 0 var(--vp-c-text-3);
+  filter: drop-shadow(0px 4px 6px var(--vp-c-text-1));
 }
 .cover .cover-title .description {
   max-width: 80%;
   font-size: 1.2rem;
+  color: var(--vp-c-text-2);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  filter: drop-shadow(0px 2px 3px var(--vp-c-text-2));
 }
 
 .cover.with-cover {

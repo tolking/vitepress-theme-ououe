@@ -6,6 +6,7 @@ import type { Theme } from '../types'
 defineProps<{
   tags?: string[]
   categories?: string[]
+  separator?: boolean
 }>()
 
 const { theme } = useData<Theme>()
@@ -23,7 +24,13 @@ const { theme } = useData<Theme>()
     >
       {{ category }}
     </VPLink>
-    <span v-if="tags?.length && categories?.length">/</span>
+    <span
+      v-if="tags?.length && categories?.length"
+      :style="{ flexGrow: separator ? 0 : 1 }"
+      class="link"
+    >
+      {{ separator ? '|' : '' }}
+    </span>
     <VPLink
       v-for="tag in tags"
       :key="tag"
@@ -35,7 +42,13 @@ const { theme } = useData<Theme>()
 </template>
 
 <style scoped>
+.nav-tags {
+  display: flex;
+  align-items: center;
+  gap: var(--vp-size-space);
+}
 .nav-tags .link {
+  color: var(--vp-c-text-2);
   transition: var(--vp-transition-color);
 }
 .nav-tags .link:hover {
