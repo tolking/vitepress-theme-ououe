@@ -6,7 +6,7 @@
   "types": "./src/types.d.ts",
   "scripts": {
     "dev": "vitepress dev examples",
-    "build": "vue-tsc --noEmit && vitepress build examples",
+    "build": "vitepress build examples",
     "preview": "vitepress preview examples",
     "types:test": "vue-tsc --noEmit",
     "lint": "eslint . --fix --ext .ts,.vue,.js",
@@ -18,6 +18,9 @@
     "vitepress",
     "blog",
     "blog-theme"
+  ],
+  "files": [
+    "src"
   ],
   "author": "tolking <qw13131wang@gmail.com>",
   "license": "MIT",
