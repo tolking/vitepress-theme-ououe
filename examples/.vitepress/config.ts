@@ -1,10 +1,10 @@
-import { resolve } from "path";
-import { defineConfigWithTheme } from "vitepress";
-import type { Theme } from "../../src/types";
+import { resolve } from 'path'
+import { defineConfigWithTheme } from 'vitepress'
+import type { Theme } from '../../src/types'
 
 export default defineConfigWithTheme<Theme>({
-  title: "My Site",
-  description: "This is my site",
+  title: 'My Site',
+  description: 'This is my site',
   // srcDir: 'posts',
   // base: '/base/',
   cleanUrls: true,
@@ -16,21 +16,21 @@ export default defineConfigWithTheme<Theme>({
     //   alt: 'logo'
     // },
     cover: {
-      src: "https://picsum.photos/1920/1080?random",
-      alt: "cover image",
+      src: 'https://picsum.photos/1920/1080?random',
+      alt: 'cover image',
     },
     nav: [
-      { text: "Home", link: "/" },
-      { text: "Tag", link: "/tag" },
-      { text: "Category", link: "/category" },
+      { text: 'Home', link: '/' },
+      { text: 'Tag', link: '/tag' },
+      { text: 'Category', link: '/category' },
     ],
-    tag: "/tag",
-    category: "/category",
+    tag: '/tag',
+    category: '/category',
     socialLinks: [
       {
-        ariaLabel: "GitHub",
-        link: "https://github.com/tolking/vitepress-theme-ououe",
-        icon: "github",
+        ariaLabel: 'GitHub',
+        link: 'https://github.com/tolking/vitepress-theme-ououe',
+        icon: 'github',
       },
     ],
     pagination: {
@@ -39,12 +39,13 @@ export default defineConfigWithTheme<Theme>({
       // match: (path) => /^\/($|index|page-)/.test(path),
       // filter: (page) => page.home,
     },
+    // excerpt: '<!-- more -->',
     createTime: {
-      text: "Create Time",
+      text: 'Create Time',
       format: (date) => new Date(date).toLocaleDateString(),
     },
     lastUpdated: {
-      text: "Last Updated",
+      text: 'Last Updated',
       format: (date) => new Date(date).toLocaleDateString(),
     },
     // readingProgress: 'bottom',
@@ -53,18 +54,18 @@ export default defineConfigWithTheme<Theme>({
       //   { text: "Home", link: "/" },
       //   { text: "GitHub", link: "https://github.com/tolking/vitepress-theme-ououe" },
       // ],
-      copyright: "copyright © 2023",
+      copyright: 'copyright © 2023',
     },
     search: {
-      provider: "local",
+      provider: 'local',
     },
   },
 
   vite: {
     resolve: {
       alias: {
-        "@src": resolve(__dirname, "../../src"),
+        '@src': resolve(__dirname, '../../src'),
       },
     },
   },
-});
+})

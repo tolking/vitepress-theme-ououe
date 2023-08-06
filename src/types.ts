@@ -67,6 +67,19 @@ export interface Theme {
    */
   pagination?: MaybeArray<PaginationItem>
   /**
+   * If `boolean`, whether to parse and include excerpt? (rendered as HTML)
+   *
+   * If `function`, control how the excerpt is extracted from the content.
+   *
+   * If `string`, define a custom separator to be used for extracting the
+   * excerpt. Default separator is `---` if `excerpt` is `true`.
+   *
+   * @default true
+   *
+   * @example '<!-- more -->'
+   */
+  excerpt?: boolean | ExcerptFunction | string
+  /**
    * Link of the tag page
    *
    * Before using, you need to add a files to your directory. (eq. tag.md -> '/tag')
@@ -230,3 +243,14 @@ export interface PaginationParams {
    */
   limit: number
 }
+
+type ExcerptFunction = (
+  file: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    data: { [key: string]: any }
+    content: string
+    excerpt?: string
+  },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  options?: any,
+) => void

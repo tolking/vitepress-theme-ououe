@@ -9,9 +9,8 @@ export { data }
 type GlobalThis = typeof globalThis & { VITEPRESS_CONFIG: SiteConfig<Theme> }
 
 const config = (globalThis as GlobalThis).VITEPRESS_CONFIG
-const pagination =
-  config.site.themeConfig.pagination &&
-  toArray(config.site.themeConfig.pagination)
+const themeConfig = config.site.themeConfig
+const pagination = themeConfig.pagination && toArray(themeConfig.pagination)
 const postsDir = pagination?.reduce((all, item) => {
   if (Array.isArray(item.dir)) {
     all = all.concat(item.dir)
@@ -25,7 +24,7 @@ const pattern = postsDir?.length
   : `${config.userConfig.srcDir || '**'}/*.md`
 
 export default createContentLoader(pattern, {
-  excerpt: true,
+  excerpt: themeConfig.excerpt ?? true,
   transform(raw): PostsItem[] {
     const posts: PostsItem[] = []
 
