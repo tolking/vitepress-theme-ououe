@@ -1,9 +1,9 @@
 {
   "name": "vitepress-theme-ououe",
   "version": "1.0.0",
-  "description": "A vitepress blog theme",
-  "main": "src/index.ts",
-  "types": "src/types.d.ts",
+  "description": "A blog theme based on vitepress",
+  "main": "./src/index.ts",
+  "types": "./src/types.d.ts",
   "scripts": {
     "dev": "vitepress dev examples",
     "build": "vue-tsc --noEmit && vitepress build examples",

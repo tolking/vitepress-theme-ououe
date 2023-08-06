@@ -2,7 +2,7 @@
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--vp-size-space);
-  padding-left: var(--vp-size-space);
+  padding-right: var(--vp-size-space);
   width: auto;
   max-width: var(--vp-size-main-width);
 }
