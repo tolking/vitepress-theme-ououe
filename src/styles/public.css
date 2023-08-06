@@ -1,6 +1,8 @@
 .main {
-  margin: 0 auto;
-  padding: 0 var(--vp-size-space);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--vp-size-space);
+  padding-left: var(--vp-size-space);
   width: auto;
   max-width: var(--vp-size-main-width);
 }
@@ -22,7 +24,8 @@ button:focus-visible {
 
 @media (min-width: 768px) {
   .main {
-    padding: 0 calc(var(--vp-size-space) * 2);
+    padding-left: calc(var(--vp-size-space) * 2);
+    padding-right: calc(var(--vp-size-space) * 2);
   }
 
   .article .vp-doc div[class*='language-'],
@@ -34,13 +37,15 @@ button:focus-visible {
 
 @media (min-width: 960px) {
   .main {
-    padding: 0 var(--vp-size-space);
+    padding-left: 0 var(--vp-size-space);
+    padding-right: 0 var(--vp-size-space);
   }
 }
 
 @media (min-width: 1100px) {
   .main {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

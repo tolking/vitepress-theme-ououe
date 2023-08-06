@@ -61,7 +61,7 @@ defineProps<{
   </TransitionGroup>
 </template>
 
-<style scoped>
+<style>
 .article-list {
   display: grid;
   grid-gap: var(--vp-size-space);
@@ -69,14 +69,17 @@ defineProps<{
   padding-top: calc(var(--vp-size-space) * 2);
   padding-bottom: calc(var(--vp-size-space) * 2);
 }
-.article-list .article-item {
+</style>
+
+<style scope>
+.article-item {
   display: flex;
   flex-direction: var(--vp-posts-direction);
   grid-column-start: span var(--vp-posts-span);
   min-height: var(--vp-posts-height);
   overflow: hidden;
 }
-.article-list .article-item .item-image {
+.article-item .item-image {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,19 +88,19 @@ defineProps<{
   border-radius: 0.5rem;
   overflow: hidden;
 }
-.article-list .article-item .item-image :deep(.img) {
+.article-item .item-image :deep(.img) {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.article-list .article-item .item-content {
+.article-item .item-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   padding: var(--vp-size-space) calc(var(--vp-size-space) * 2);
   max-height: var(--vp-posts-height);
 }
-.article-list .article-item .item-content .title {
+.article-item .item-content .title {
   font-size: 1.3rem;
   color: var(--vp-c-text-1);
   font-weight: 700;
@@ -107,10 +110,10 @@ defineProps<{
   text-overflow: ellipsis;
   transition: var(--vp-transition-color);
 }
-.article-list .article-item .item-content .title:hover {
+.article-item .item-content .title:hover {
   color: var(--vp-c-brand);
 }
-.article-list .article-item .item-content .excerpt {
+.article-item .item-content .excerpt {
   flex: 1;
   margin: var(--vp-size-space) 0;
   overflow: hidden;

@@ -34,8 +34,8 @@ export default defineConfigWithTheme<Theme>({
       },
     ],
     pagination: {
-      prev: "<-",
-      next: "->",
+      // prev: "<-",
+      // next: "->",
       // match: (path) => /^\/($|index|page-)/.test(path),
       // filter: (page) => page.home,
     },

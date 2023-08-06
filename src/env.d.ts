@@ -13,3 +13,11 @@ declare module 'vitepress/dist/client/theme-default/composables/nav' {
     toggleScreen: () => void
   }
 }
+
+declare module 'vitepress/dist/client/shared' {
+  export function isActive(
+    currentPath: string,
+    matchPath: string,
+    asRegex = false,
+  ): boolean
+}

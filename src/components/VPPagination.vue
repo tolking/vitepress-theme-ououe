@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { DefaultTheme, useData, useRoute } from 'vitepress'
 import { usePagination } from '../composables/index'
+import { isActive } from 'vitepress/dist/client/shared'
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
 import type { Theme, PaginationParams } from '../types'
 
@@ -88,6 +89,10 @@ function formatPage(index: number): DefaultTheme.NavItemWithLink {
 
 function findPageInfo(n: number) {
   const index = group.value.findIndex((item) => item.link === route.path)
+
+  if (index + n < 0 || index + n >= group.value.length) {
+    return undefined
+  }
   return group.value[index + n]
 }
 </script>
@@ -100,47 +105,67 @@ function findPageInfo(n: number) {
     appear
     class="main pagination"
   >
-    <VPLink
-      v-if="pagination.current !== 1"
-      :href="prev.link"
-      :target="prev.target"
-      :rel="prev.rel"
-      class="pagination-item"
+    <span
+      v-show="prev"
+      key="prew"
     >
-      {{ pagination.prev }}
-    </VPLink>
+      <VPLink
+        v-if="prev && pagination.current !== 1"
+        :href="prev.link"
+        :target="prev.target"
+        :rel="prev.rel"
+        class="pagination-item"
+      >
+        {{ pagination.prev }}
+      </VPLink>
+    </span>
     <VPLink
       v-for="item in group"
       :key="item.link"
       :href="item.link"
       :target="item.target"
       :rel="item.rel"
-      :class="{ active: item.link === route.path }"
+      :class="{
+        active: isActive(
+          page.relativePath,
+          item.activeMatch || item.link,
+          !!item.activeMatch,
+        ),
+      }"
       class="pagination-item"
     >
       {{ item.text }}
     </VPLink>
-    <VPLink
-      v-if="pagination.current !== pagination.pages"
-      :href="next.link"
-      :target="next.target"
-      :rel="next.rel"
-      class="pagination-item"
+    <span
+      v-show="next"
+      key="next"
     >
-      {{ pagination.next }}
-    </VPLink>
+      <VPLink
+        v-if="next && pagination.current !== pagination.pages"
+        :href="next.link"
+        :target="next.target"
+        :rel="next.rel"
+        class="pagination-item"
+      >
+        {{ pagination.next }}
+      </VPLink>
+    </span>
   </TransitionGroup>
 </template>
 
-<style scoped>
+<style>
 .pagination {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--vp-size-space);
-  padding: 1rem 0 2rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
-.pagination .pagination-item {
+</style>
+
+<style scoped>
+.pagination-item {
   --vp-button-border: var(--vp-button-alt-border);
   --vp-button-bg: var(--vp-button-alt-bg);
   --vp-button-text: var(--vp-button-alt-text);
@@ -151,7 +176,7 @@ function findPageInfo(n: number) {
   --vp-button-active-bg: var(--vp-button-alt-active-bg);
   --vp-button-active-text: var(--vp-button-alt-active-text);
 }
-.pagination .pagination-item.active {
+.pagination-item.active {
   --vp-button-border: var(--vp-button-brand-border);
   --vp-button-bg: var(--vp-button-brand-bg);
   --vp-button-text: var(--vp-button-brand-text);
@@ -162,7 +187,8 @@ function findPageInfo(n: number) {
   --vp-button-active-bg: var(--vp-button-brand-active-bg);
   --vp-button-active-text: var(--vp-button-brand-active-text);
 }
-.pagination .pagination-item {
+.pagination-item {
+  display: block;
   padding: 0.4rem 1rem;
   border-radius: 0.5rem;
   border: 1px solid var(--vp-button-border);
@@ -170,12 +196,12 @@ function findPageInfo(n: number) {
   color: var(--vp-button-text);
   transition: var(--vp-transition-all);
 }
-.pagination .pagination-item:hover {
+.pagination-item:hover {
   border-color: var(--vp-button-hover-border);
   background-color: var(--vp-button-hover-bg);
   color: var(--vp-button-hover-text);
 }
-.pagination .pagination-item:active {
+.pagination-item:active {
   border-color: var(--vp-button-active-border);
   background-color: var(--vp-button-active-bg);
   color: var(--vp-button-active-text);

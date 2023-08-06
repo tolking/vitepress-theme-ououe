@@ -44,7 +44,8 @@ const { theme, frontmatter } = useData<Theme>()
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: calc(var(--vp-size-space) + 0.3rem) 0;
+  padding-top: calc(var(--vp-size-space) + 0.3rem);
+  padding-bottom: calc(var(--vp-size-space) + 0.3rem);
 }
 .footer.is-nav {
   justify-content: space-between;
@@ -52,11 +53,11 @@ const { theme, frontmatter } = useData<Theme>()
 .footer .copyright {
   color: var(--vp-c-text-2);
 }
-.footer .footer-nav {
+.footer :deep(.footer-nav) {
   display: flex;
   align-items: center;
 }
-.footer .footer-nav :deep(.VPLink) {
+.footer :deep(.footer-nav .VPLink) {
   margin-left: calc(var(--vp-size-space) * 2);
   color: var(--vp-c-brand);
 }

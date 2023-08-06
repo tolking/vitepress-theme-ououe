@@ -28,11 +28,11 @@ const { theme } = useData<Theme>()
       {{ category }}
     </VPLink>
     <span
-      v-if="tags?.length && categories?.length"
+      key="__separator"
       :style="{ flexGrow: separator ? 0 : 1 }"
-      class="link"
+      class="link separator"
     >
-      {{ separator ? '|' : '' }}
+      {{ tags?.length && categories?.length && separator ? '|' : '' }}
     </span>
     <VPLink
       v-for="tag in tags"
@@ -44,17 +44,24 @@ const { theme } = useData<Theme>()
   </TransitionGroup>
 </template>
 
-<style scoped>
+<style>
 .nav-tags {
   display: flex;
   align-items: center;
   gap: var(--vp-size-space);
 }
-.nav-tags .link {
+</style>
+
+<style scoped>
+.link {
   color: var(--vp-c-text-2);
   transition: var(--vp-transition-color);
 }
-.nav-tags .link:hover {
+.link:hover {
   color: var(--vp-c-brand);
+}
+.separator:first-child,
+.separator:last-child {
+  display: none;
 }
 </style>
