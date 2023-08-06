@@ -1,4 +1,7 @@
+import theme from './index'
 import type { DefaultTheme } from 'vitepress'
+
+export default theme
 
 export interface Theme {
   /**
