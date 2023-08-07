@@ -19,7 +19,7 @@ defineProps<{
     <article
       v-for="(item, index) in list"
       :key="item.url"
-      :style="{ '--vp-posts-delay': `${index / 8}s` }"
+      :style="{ '--vp-posts-delay': `${index / 10}s` }"
       class="article-item"
     >
       <VPLink
@@ -64,7 +64,7 @@ defineProps<{
 <style>
 .article-list {
   display: grid;
-  grid-gap: var(--vp-size-space);
+  gap: calc(var(--vp-size-space) * 2);
   grid-template-columns: repeat(6, 1fr);
   padding-top: calc(var(--vp-size-space) * 2);
   padding-bottom: calc(var(--vp-size-space) * 2);
