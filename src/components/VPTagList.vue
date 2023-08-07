@@ -26,7 +26,7 @@ function handleChange(event: Event) {
       :key="tag"
       :for="`id__${tag}`"
       :class="{ active: tag === modelValue }"
-      :style="{ '--vp-posts-delay': `${index / 10}s` }"
+      :style="{ '--vp-posts-delay': `${index / 20}s` }"
       class="tag-item"
     >
       <input
