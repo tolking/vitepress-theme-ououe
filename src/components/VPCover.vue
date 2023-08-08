@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useData, withBase } from 'vitepress'
-import type { Theme } from '../types'
+import type { Theme } from '../types/index'
 
 const props = defineProps<{
   title?: string

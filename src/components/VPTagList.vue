@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { TagListSlots } from '../types/index'
+
 defineProps<{
   modelValue?: string
   list?: Record<string, number>
@@ -6,6 +8,7 @@ defineProps<{
 const emit = defineEmits<{
   (event: 'update:modelValue', value: string): void
 }>()
+defineSlots<TagListSlots>()
 
 function handleChange(event: Event) {
   const target = event.target as HTMLInputElement
@@ -38,10 +41,16 @@ function handleChange(event: Event) {
         class="visually-hidden"
         @change="handleChange"
       >
-      <div class="item-inner">
-        <span>{{ tag }}</span>
-        <span class="count">({{ count }})</span>
-      </div>
+      <slot
+        name="tag-item"
+        :tag="tag"
+        :count="count"
+      >
+        <div class="item-inner">
+          <span>{{ tag }}</span>
+          <span class="count">({{ count }})</span>
+        </div>
+      </slot>
     </label>
   </TransitionGroup>
 </template>

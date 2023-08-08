@@ -7,7 +7,9 @@ import VPCover from '../components/VPCover.vue'
 import VPNavTags from '../components/VPNavTags.vue'
 import VPArticleList from '../components/VPArticleList.vue'
 import VPReadingProgress from '../components/VPReadingProgress.vue'
-import type { Theme } from '../types'
+import type { ArticleSlots, Theme } from '../types/index'
+
+defineSlots<ArticleSlots>()
 
 const { frontmatter, theme, lang, page } = useData<Theme>()
 const list = usePrevNext()
@@ -46,11 +48,23 @@ const lastUpdated = computed(() => {
         class="article-tags"
       />
     </VPCover>
+    <slot
+      name="article-top"
+      :frontmatter="frontmatter"
+    />
     <article
       id="VPContent"
       class="main vp-doc"
     >
+      <slot
+        name="article-content-before"
+        :frontmatter="frontmatter"
+      />
       <Content />
+      <slot
+        name="article-content-after"
+        :frontmatter="frontmatter"
+      />
       <footer
         v-if="theme.createTime && theme.lastUpdated"
         class="article-time"
@@ -65,9 +79,30 @@ const lastUpdated = computed(() => {
         </p>
       </footer>
     </article>
+    <slot
+      name="article-pagination-before"
+      :frontmatter="frontmatter"
+    />
     <VPArticleList
       :list="list"
       class="article-pagination"
+    >
+      <template #article-item-top="scope">
+        <slot
+          name="article-item-top"
+          v-bind="scope"
+        />
+      </template>
+      <template #article-item-bottom="scope">
+        <slot
+          name="article-item-bottom"
+          v-bind="scope"
+        />
+      </template>
+    </VPArticleList>
+    <slot
+      name="article-bottom"
+      :frontmatter="frontmatter"
     />
     <VPReadingProgress />
   </section>

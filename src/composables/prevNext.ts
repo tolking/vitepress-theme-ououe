@@ -1,7 +1,7 @@
 import { computed } from 'vue'
 import { useRoute } from 'vitepress'
 import { usePagination } from './index'
-import type { PostsItem } from '../types'
+import type { PostsItem } from '../types/index'
 
 export function usePrevNext() {
   const route = useRoute()

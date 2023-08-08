@@ -8,15 +8,15 @@ import VPNavBarTranslations from 'vitepress/dist/client/theme-default/components
 import VPNavBarAppearance from 'vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue'
 import VPNavBarSocialLinks from 'vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue'
 import VPNavBarHamburger from 'vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue'
-import type { Theme } from '../types'
+import type { HeaderSlots, Theme } from '../types/index'
 
 defineProps<{
   isScreenOpen: boolean
 }>()
-
 defineEmits<{
   (e: 'toggle-screen'): void
 }>()
+defineSlots<HeaderSlots>()
 
 const { site, theme } = useData<Theme>()
 </script>
@@ -24,6 +24,7 @@ const { site, theme } = useData<Theme>()
 <template>
   <header class="header">
     <div class="main header-content">
+      <slot name="header-left" />
       <VPLink class="header-logo">
         <VPImage
           v-if="theme.logo"
@@ -34,7 +35,9 @@ const { site, theme } = useData<Theme>()
           {{ site.title }}
         </template>
       </VPLink>
+      <slot name="header-logo-after" />
       <VPNavBarMenu class="menu" />
+      <slot name="header-search-before" />
       <VPNavBarSearch class="search" />
       <VPNavBarTranslations class="translations" />
       <VPNavBarAppearance class="appearance" />
@@ -44,6 +47,7 @@ const { site, theme } = useData<Theme>()
         class="hamburger"
         @click="$emit('toggle-screen')"
       />
+      <slot name="header-right" />
     </div>
   </header>
 </template>

@@ -34,4 +34,4 @@ export default defineConfigWithTheme<Theme>({
 
 ## Config
 
-[Refer to type file](./src/types.ts)
+[Refer to type file](./src/types/theme.ts)
