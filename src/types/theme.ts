@@ -1,7 +1,5 @@
-import theme from './index'
 import type { DefaultTheme } from 'vitepress'
-
-export default theme
+import type { MaybeArray } from './index'
 
 export interface Theme {
   /**
@@ -148,8 +146,6 @@ export interface Theme {
     | { provider: 'local'; options?: DefaultTheme.LocalSearchOptions }
     | { provider: 'algolia'; options: DefaultTheme.AlgoliaSearchOptions }
 }
-
-export type MaybeArray<T> = T | T[]
 
 interface TimeFormatOptions {
   /**

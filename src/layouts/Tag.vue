@@ -5,7 +5,9 @@ import { useTag } from '../composables/index'
 import VPCover from '../components/VPCover.vue'
 import VPTagList from '../components/VPTagList.vue'
 import VPArticleList from '../components/VPArticleList.vue'
-import type { Theme } from '../types'
+import { TagSlots, type Theme } from '../types/index'
+
+defineSlots<TagSlots>()
 
 const route = useRoute()
 const { frontmatter, theme } = useData<Theme>()
@@ -34,11 +36,21 @@ const title = computed(() => {
       :title="title"
       description=""
     />
+    <slot name="tag-top" />
     <VPTagList
       id="VPContent"
       v-model="current"
       :list="list"
-    />
+    >
+      <template #tag-item="scope">
+        <slot
+          name="tag-item"
+          v-bind="scope"
+        />
+      </template>
+    </VPTagList>
+    <slot name="tag-after" />
     <VPArticleList :list="posts" />
+    <slot name="tag-bottom" />
   </section>
 </template>

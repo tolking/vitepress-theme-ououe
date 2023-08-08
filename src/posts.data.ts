@@ -1,7 +1,7 @@
 import { createContentLoader } from 'vitepress'
 import { toArray } from './utils/index'
 import type { SiteConfig } from 'vitepress'
-import type { Theme, PostsItem } from './types'
+import type { Theme, PostsItem } from './types/theme'
 
 declare const data: PostsItem[]
 export { data }

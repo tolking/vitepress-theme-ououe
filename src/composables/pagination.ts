@@ -2,7 +2,7 @@ import { computed } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import { data } from '../posts.data'
 import { isFunction, toArray } from '../utils/index'
-import type { Theme, PaginationParams } from '../types'
+import type { Theme, PaginationParams } from '../types/index'
 
 export function usePagination() {
   const route = useRoute()

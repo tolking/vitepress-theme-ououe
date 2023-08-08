@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
-import type { Theme } from '../types'
+import type { Theme } from '../types/index'
 
 defineProps<{
   tags?: string[]

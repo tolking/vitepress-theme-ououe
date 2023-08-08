@@ -2,7 +2,7 @@ import { computed, ref, watch } from 'vue'
 import { useData, inBrowser, useRoute } from 'vitepress'
 import { data } from '../posts.data'
 import { Classifiable } from '../utils/index'
-import type { Theme } from '../types'
+import type { Theme } from '../types/index'
 
 const classifiable = new Classifiable(data)
 

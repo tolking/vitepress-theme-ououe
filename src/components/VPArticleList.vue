@@ -2,11 +2,12 @@
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
 import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue'
 import VPNavTags from '../components/VPNavTags.vue'
-import type { PostsItem } from '../types'
+import type { ArticleListSlots, PostsItem } from '../types/index'
 
 defineProps<{
   list?: PostsItem[]
 }>()
+defineSlots<ArticleListSlots>()
 </script>
 
 <template>
@@ -36,6 +37,10 @@ defineProps<{
         />
       </VPLink>
       <div class="item-content">
+        <slot
+          name="article-item-top"
+          :item="item"
+        />
         <VPLink :href="item.url">
           <h2 class="title">
             {{ item.title }}
@@ -55,6 +60,10 @@ defineProps<{
         <VPNavTags
           :tags="item.tags"
           :categories="item.categories"
+        />
+        <slot
+          name="article-item-bottom"
+          :item="item"
         />
       </div>
     </article>

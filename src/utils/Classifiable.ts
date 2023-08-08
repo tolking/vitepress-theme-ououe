@@ -1,4 +1,4 @@
-import type { PostsItem } from '../types'
+import type { PostsItem } from '../types/index'
 
 export class Classifiable {
   public tags: Record<string, PostsItem[] | undefined>
