@@ -66,14 +66,17 @@ const lastUpdated = computed(() => {
         :frontmatter="frontmatter"
       />
       <footer
-        v-if="theme.createTime && theme.lastUpdated"
+        v-if="
+          (frontmatter.createTime !== false && theme.createTime) ||
+            (frontmatter.lastUpdated !== false && theme.lastUpdated)
+        "
         class="article-time"
       >
-        <p v-if="theme.createTime">
+        <p v-if="frontmatter.createTime !== false && theme.createTime">
           {{ theme.createTime.text }}:
           <time :datetime="createTime">{{ createTime }}</time>
         </p>
-        <p v-if="theme.lastUpdated">
+        <p v-if="frontmatter.lastUpdated !== false && theme.lastUpdated">
           {{ theme.lastUpdated.text }}:
           <time :datetime="lastUpdated">{{ lastUpdated }}</time>
         </p>
@@ -84,6 +87,7 @@ const lastUpdated = computed(() => {
       :frontmatter="frontmatter"
     />
     <VPArticleList
+      v-if="frontmatter.articlePagination !== false"
       :list="list"
       class="article-pagination"
     >
