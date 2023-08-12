@@ -36,3 +36,9 @@ const { list } = usePagination()
     <slot name="page-bottom" />
   </section>
 </template>
+
+<style scoped>
+.page {
+  flex-grow: 1;
+}
+</style>

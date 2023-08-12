@@ -113,8 +113,11 @@ const lastUpdated = computed(() => {
 </template>
 
 <style scoped>
+.article {
+  flex-grow: 1;
+}
 .article .article-tags {
-  filter: drop-shadow(0px 2px 3px var(--vp-c-text-2));
+  mix-blend-mode: difference;
 }
 .article .vp-doc {
   padding-top: calc(var(--vp-size-space) * 2);

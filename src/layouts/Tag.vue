@@ -54,3 +54,9 @@ const title = computed(() => {
     <slot name="tag-bottom" />
   </section>
 </template>
+
+<style scoped>
+.tag {
+  flex-grow: 1;
+}
+</style>
