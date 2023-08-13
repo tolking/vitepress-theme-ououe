@@ -1,6 +1,8 @@
-# vitepress-theme-ououe [BETA]
+# vitepress-theme-ououe
 
 > A blog theme based on vitepress
+
+Live Demo: [My Blog](https://ououe.com)
 
 ![demo](./examples/public/vitepress-theme-ououe.jpg)
 

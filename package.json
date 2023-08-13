@@ -1,6 +1,6 @@
 {
   "name": "vitepress-theme-ououe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A blog theme based on vitepress",
   "main": "./src/index.ts",
   "types": "./src/types/index.ts",
