@@ -116,7 +116,7 @@ const lastUpdated = computed(() => {
 .article {
   flex-grow: 1;
 }
-.article .article-tags {
+.article .article-tags :deep(.link) {
   mix-blend-mode: difference;
 }
 .article .vp-doc {
