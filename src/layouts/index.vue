@@ -51,7 +51,14 @@ provide('close-screen', closeScreen)
     mode="out-in"
     appear
   >
-    <NotFound v-if="page.isNotFound" />
+    <NotFound v-if="page.isNotFound">
+      <template #not-found-top>
+        <slot name="not-found-top" />
+      </template>
+      <template #not-found-bottom>
+        <slot name="not-found-bottom" />
+      </template>
+    </NotFound>
     <Page v-else-if="layout === 'page'">
       <template #page-top>
         <slot name="page-top" />

@@ -39,11 +39,17 @@ export interface TagSlots extends TagListSlots {
   'tag-bottom'?: () => any
 }
 
+export interface NotFoundSlots {
+  'not-found-top'?: () => any
+  'not-found-bottom'?: () => any
+}
+
 export interface LayoutsSlots
   extends ArticleSlots,
     PageSlots,
     TagSlots,
-    HeaderSlots {
+    HeaderSlots,
+    NotFoundSlots {
   'header-before'?: () => any
   'header-after'?: () => any
   'footer-before'?: () => any
