@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-import { useRoute } from 'vitepress'
+import { useRoute, withBase } from 'vitepress'
 import { usePagination } from './index'
 import type { PostsItem } from '../types/index'
 
@@ -8,7 +8,9 @@ export function usePrevNext() {
   const { posts } = usePagination()
 
   return computed(() => {
-    const index = posts.value.findIndex((item) => item.url === route.path)
+    const index = posts.value.findIndex(
+      (item) => withBase(item.url) === route.path,
+    )
     const list: PostsItem[] = []
 
     if (index > 0) {
