@@ -3,7 +3,7 @@ import type { MaybeArray } from './index'
 
 export interface Theme {
   /**
-   * The logo of posts
+   * The logo of website
    *
    * @example { src: '/public/logo.png', alt: 'logo' }
    * @example { src: 'https://avatars.githubusercontent.com/u/23313167?v=4', alt: 'logo' }
@@ -43,7 +43,7 @@ export interface Theme {
    * }
    * ```
    *
-   * Refer to [examples](https://github.com/tolking/vitepress-theme-ououe/blob/main/examples/%5Bpage%5D.paths.ts) for more information
+   * Refer to [examples](https://github.com/tolking/vitepress-theme-ououe/blob/main/docs/%5Bpage%5D.paths.ts) for more information
    *
    * @example
    * ```ts
@@ -173,6 +173,7 @@ export interface PostsItem {
   [key: string]: any
 }
 
+// #region pagination
 export interface PaginationItem {
   /**
    * Pagination collapses when the total page count exceeds this value
@@ -242,6 +243,7 @@ export interface PaginationParams {
    */
   limit: number
 }
+// #endregion pagination
 
 type ExcerptFunction = (
   file: {
