@@ -20,7 +20,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          registry-url: https://registry.npmjs.org/
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
@@ -36,7 +35,4 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.PAGE }}
-          branch: gh-pages
           folder: dist
-          clean: true
