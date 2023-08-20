@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { DefaultTheme, useData, useRoute } from 'vitepress'
+import { type DefaultTheme, useData, useRoute, withBase } from 'vitepress'
 import { usePagination } from '../composables/index'
 import { isActive } from 'vitepress/dist/client/shared'
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
@@ -88,7 +88,9 @@ function formatPage(index: number): DefaultTheme.NavItemWithLink {
 }
 
 function findPageInfo(n: number) {
-  const index = group.value.findIndex((item) => item.link === route.path)
+  const index = group.value.findIndex(
+    (item) => withBase(item.link) === route.path,
+  )
 
   if (index + n < 0 || index + n >= group.value.length) {
     return undefined
@@ -105,20 +107,16 @@ function findPageInfo(n: number) {
     appear
     class="main pagination"
   >
-    <span
-      v-show="prev"
+    <VPLink
+      v-show="prev && pagination.current !== 1"
       key="prew"
+      :href="prev?.link"
+      :target="prev?.target"
+      :rel="prev?.rel"
+      class="pagination-item"
     >
-      <VPLink
-        v-if="prev && pagination.current !== 1"
-        :href="prev.link"
-        :target="prev.target"
-        :rel="prev.rel"
-        class="pagination-item"
-      >
-        {{ pagination.prev }}
-      </VPLink>
-    </span>
+      {{ pagination.prev }}
+    </VPLink>
     <VPLink
       v-for="item in group"
       :key="item.link"
@@ -136,20 +134,16 @@ function findPageInfo(n: number) {
     >
       {{ item.text }}
     </VPLink>
-    <span
-      v-show="next"
+    <VPLink
+      v-show="next && pagination.current !== pagination.pages"
       key="next"
+      :href="next?.link"
+      :target="next?.target"
+      :rel="next?.rel"
+      class="pagination-item"
     >
-      <VPLink
-        v-if="next && pagination.current !== pagination.pages"
-        :href="next.link"
-        :target="next.target"
-        :rel="next.rel"
-        class="pagination-item"
-      >
-        {{ pagination.next }}
-      </VPLink>
-    </span>
+      {{ pagination.next }}
+    </VPLink>
   </TransitionGroup>
 </template>
 

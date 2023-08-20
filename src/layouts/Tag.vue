@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useData, useRoute } from 'vitepress'
+import { useData, useRoute, withBase } from 'vitepress'
 import { useTag } from '../composables/index'
 import VPCover from '../components/VPCover.vue'
 import VPTagList from '../components/VPTagList.vue'
@@ -16,7 +16,7 @@ const { current, list, posts } = useTag()
 const title = computed(() => {
   const nav = theme.value.nav?.find((item) => {
     if ('link' in item) {
-      return item.link === route.path
+      return withBase(item.link) === route.path
     }
     return false
   })

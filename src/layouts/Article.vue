@@ -144,7 +144,7 @@ const lastUpdated = computed(() => {
   --vp-posts-span: 6;
 }
 .article .article-pagination :deep(.article-item .item-content) {
-  max-width: calc(60% - var(--vp-size-space) * 4);
+  min-width: calc(60% - var(--vp-size-space) * 4);
 }
 
 @media (min-width: 768px) {
