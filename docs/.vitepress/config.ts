@@ -3,13 +3,31 @@ import { defineConfigWithTheme } from 'vitepress'
 import type { Theme } from '../../src/types'
 
 export default defineConfigWithTheme<Theme>({
-  title: 'My Site',
-  description: 'This is my site',
-  // srcDir: 'posts',
-  // base: '/base/',
+  title: 'vitepress-theme-ououe',
+  description: 'A blog theme based on vitepress',
+  outDir: '../dist',
   cleanUrls: true,
   lastUpdated: true,
-
+  lang: 'zn-CN',
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['meta', { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge,chrome=1' }],
+    ['meta', { name: 'renderer', content: 'webkit' }],
+    ['meta', { name: 'force-rendering', content: 'webkit' }],
+    ['meta', { name: 'applicable-device', content: 'pc,mobile' }],
+    ['meta', { name: 'author', content: 'tolking <w13131wang@gmail.com>' }],
+  ],
+  // locales: {
+  //   root: {
+  //     label: 'English',
+  //     lang: 'en'
+  //   },
+  //   zh: {
+  //     label: '简体中文',
+  //     lang: 'zh-CN',
+  //     description: '为 vuepress 制作的一款主题'
+  //   }
+  // },
   themeConfig: {
     // logo: {
     //   src: 'https://avatars.githubusercontent.com/u/23313167?v=4',
@@ -34,12 +52,13 @@ export default defineConfigWithTheme<Theme>({
       },
     ],
     pagination: {
-      // prev: "<-",
-      // next: "->",
+      prev: '<-',
+      next: '->',
       // match: (path) => /^\/($|index|page-)/.test(path),
+      sort: (a, b) => a.index - b.index,
       // filter: (page) => page.home,
     },
-    // excerpt: '<!-- more -->',
+    excerpt: '<!-- more -->',
     createTime: {
       text: 'Create Time',
       format: (date) => new Date(date).toLocaleDateString(),
@@ -54,7 +73,7 @@ export default defineConfigWithTheme<Theme>({
       //   { text: "Home", link: "/" },
       //   { text: "GitHub", link: "https://github.com/tolking/vitepress-theme-ououe" },
       // ],
-      copyright: 'copyright © 2023',
+      copyright: 'tolking © 2023',
     },
     search: {
       provider: 'local',

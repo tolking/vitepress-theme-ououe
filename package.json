@@ -5,13 +5,14 @@
   "main": "./src/index.ts",
   "types": "./src/types/index.ts",
   "scripts": {
-    "dev": "vitepress dev examples",
-    "build": "vitepress build examples",
-    "preview": "vitepress preview examples",
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "build:docs": "vitepress build docs --base /vitepress-theme-ououe/",
+    "preview": "vitepress preview docs",
     "types:test": "vue-tsc --noEmit",
     "lint": "eslint . --fix --ext .ts,.vue,.js",
     "lint:test": "eslint . --ext .ts,.vue,.js --max-warnings 0",
-    "prettier": "prettier --check --write --ignore-unknown \"{examples,src}/**\"",
+    "prettier": "prettier --check --write --ignore-unknown \"{docs,src}/**\"",
     "prepare": "husky install"
   },
   "keywords": [
@@ -25,7 +26,7 @@
   "author": "tolking <qw13131wang@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "vitepress": "^1.0.0-beta.7"
+    "vitepress": "^1.0.0-rc.4"
   },
   "devDependencies": {
     "@types/node": "^20.4.4",

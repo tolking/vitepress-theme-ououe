@@ -4,7 +4,7 @@ export default {
   paths() {
     const limit = 12 // Item count of each page
     const files = fs
-      .readdirSync('examples/posts')
+      .readdirSync('docs/posts')
       .filter((file) => !/^\[[^]*]\]\./.test(file))
     const total = Math.ceil(files.length / limit)
 

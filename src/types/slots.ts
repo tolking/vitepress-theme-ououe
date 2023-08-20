@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { PostsItem } from './index'
+import type { PostsItem } from './index'
 
 type Frontmatter = Record<string, any>
 

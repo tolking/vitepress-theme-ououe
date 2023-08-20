@@ -2,9 +2,9 @@
 
 > A blog theme based on vitepress
 
-Live Demo: [My Blog](https://ououe.com)
+[Documentation](https://tolking.github.io/vitepress-theme-ououe)
 
-![demo](./examples/public/vitepress-theme-ououe.jpg)
+![image](./docs/public/vitepress-theme-ououe.jpg)
 
 ## Install
 
@@ -33,7 +33,3 @@ export default defineConfigWithTheme<Theme>({
   },
 })
 ```
-
-## Config
-
-[Refer to type file](./src/types/theme.ts)
