@@ -44,15 +44,16 @@ yarn add -D sitemap
 import { resolve } from 'path'
 import { writeFileSync } from 'fs'
 import { SitemapStream, streamToPromise } from 'sitemap'
-import { defineConfig } from 'vitepress'
+import { defineConfigWithTheme } from 'vitepress'
 import type { SiteConfig } from 'vitepress'
+import type { Theme } from 'vitepress-theme-ououe'
 
-export default defineConfig({
+export default defineConfigWithTheme<Theme>({
   // ...
   buildEnd: genSitemap,
 })
 
-function genSitemap(siteConfig: SiteConfig) {
+function genSitemap(siteConfig: SiteConfig<Theme>) {
   const stream = new SitemapStream({ hostname: 'https://my.blog' })
 
   siteConfig.pages.forEach((url) => {
