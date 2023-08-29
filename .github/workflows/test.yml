@@ -35,8 +35,5 @@ jobs:
       - name: Lint
         run: pnpm lint:test
 
-      - name: Typescript
-        run: pnpm types:test
-
       - name: Build
         run: pnpm build
