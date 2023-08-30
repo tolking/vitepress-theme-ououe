@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html lang="zn-CN" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>主题配置 | vitepress-theme-ououe</title>
-    <meta name="description" content="A blog theme based on vitepress">
-    <link rel="preload stylesheet" href="/vitepress-theme-ououe/assets/style.4a6b3b8e.css" as="style">
-    
-    <script type="module" src="/vitepress-theme-ououe/assets/app.6bfb98b0.js"></script>
-    <link rel="modulepreload" href="/vitepress-theme-ououe/assets/chunks/framework.777da7bb.js">
-    <link rel="modulepreload" href="/vitepress-theme-ououe/assets/chunks/theme.fe1107c7.js">
-    <link rel="modulepreload" href="/vitepress-theme-ououe/assets/posts_config.md.27150847.lean.js">
-    <link rel="icon" href="/favicon.ico">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="force-rendering" content="webkit">
-    <meta name="applicable-device" content="pc,mobile">
-    <meta name="author" content="tolking &lt;w13131wang@gmail.com&gt;">
-    <script id="check-dark-light">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
-  </head>
-  <body><div class="top reading-progress" data-v-e93e54e1><div style="" class="progress" data-v-e93e54e1></div></div><!--teleport anchor-->
-    <div id="app"><!--[--><!--[--><span tabindex="-1" data-v-772c6c58></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-772c6c58> Skip to content </a><!--]--><!--[--><!--]--><header class="header" data-v-78d405b7><div class="main header-content" data-v-78d405b7><!--[--><!--]--><span class="VPLink header-logo" data-v-78d405b7><!--[--><!--[-->vitepress-theme-ououe<!--]--><!--]--></span><!--[--><!--]--><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-78d405b7 data-v-00e617ba><span id="main-nav-aria-label" class="visually-hidden" data-v-00e617ba>Main Navigation</span><!--[--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/vitepress-theme-ououe/" tabindex="0" data-v-00e617ba data-v-963f800b><!--[--><span data-v-963f800b>Home</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/vitepress-theme-ououe/tag" tabindex="0" data-v-00e617ba data-v-963f800b><!--[--><span data-v-963f800b>Tag</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/vitepress-theme-ououe/category" tabindex="0" data-v-00e617ba data-v-963f800b><!--[--><span data-v-963f800b>Category</span><!--]--></a><!--]--><!--]--></nav><!--[--><!--]--><div class="VPNavBarSearch search" style="--vp-meta-key:&#39;Meta&#39;;" data-v-78d405b7><!--[--><!----><div id="local-search"><button type="button" class="DocSearch DocSearch-Button" aria-label="Search"><span class="DocSearch-Button-Container"><svg class="DocSearch-Search-Icon" width="20" height="20" viewBox="0 0 20 20" aria-label="search icon"><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">Search</span></span><span class="DocSearch-Button-Keys"><kbd class="DocSearch-Button-Key"></kbd><kbd class="DocSearch-Button-Key">K</kbd></span></button></div><!--]--></div><!----><div class="VPNavBarAppearance appearance" data-v-78d405b7 data-v-0f9caf39><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title="toggle dark mode" aria-checked="false" data-v-0f9caf39 data-v-ec9fde88 data-v-814a53f3><span class="check" data-v-814a53f3><span class="icon" data-v-814a53f3><!--[--><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="sun" data-v-ec9fde88><path d="M12,18c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S15.3,18,12,18zM12,8c-2.2,0-4,1.8-4,4c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4C16,9.8,14.2,8,12,8z"></path><path d="M12,4c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1s1,0.4,1,1v2C13,3.6,12.6,4,12,4z"></path><path d="M12,24c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1s1,0.4,1,1v2C13,23.6,12.6,24,12,24z"></path><path d="M5.6,6.6c-0.3,0-0.5-0.1-0.7-0.3L3.5,4.9c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.4,1.4c0.4,0.4,0.4,1,0,1.4C6.2,6.5,5.9,6.6,5.6,6.6z"></path><path d="M19.8,20.8c-0.3,0-0.5-0.1-0.7-0.3l-1.4-1.4c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.4,1.4c0.4,0.4,0.4,1,0,1.4C20.3,20.7,20,20.8,19.8,20.8z"></path><path d="M3,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1S3.6,13,3,13z"></path><path d="M23,13h-2c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path><path d="M4.2,20.8c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C4.7,20.7,4.5,20.8,4.2,20.8z"></path><path d="M18.4,6.6c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C18.9,6.5,18.6,6.6,18.4,6.6z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="moon" data-v-ec9fde88><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg><!--]--></span></span></button></div><div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-78d405b7 data-v-949e046e data-v-772a7e69><!--[--><a class="VPSocialLink no-icon" href="https://github.com/tolking/vitepress-theme-ououe" aria-label="GitHub" target="_blank" rel="noopener" data-v-772a7e69 data-v-5955498c><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a><!--]--></div><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-78d405b7 data-v-bd684ce6><span class="container" data-v-bd684ce6><span class="top" data-v-bd684ce6></span><span class="middle" data-v-bd684ce6></span><span class="bottom" data-v-bd684ce6></span></span></button><!--[--><!--]--></div></header><!----><!--[--><!--]--><section class="article" data-v-9482e268><section class="with-cover cover" data-v-9482e268 data-v-c4a2ed8b><div style="background-image:url(https://picsum.photos/536/354?random=10);" class="cover-bg" data-v-c4a2ed8b></div><hgroup class="cover-title" data-v-c4a2ed8b><h1 class="title" data-v-c4a2ed8b>主题配置</h1><!--[--><nav name="scale" appear class="nav-tags article-tags" data-v-9482e268><a class="VPLink link" href="/vitepress-theme-ououe/category?t=docs" data-v-6fa02a1c><!--[-->docs<!--]--></a><span style="flex-grow:0;" class="link separator" data-v-6fa02a1c>|</span><a class="VPLink link" href="/vitepress-theme-ououe/tag?t=reference" data-v-6fa02a1c><!--[-->reference<!--]--></a><a class="VPLink link" href="/vitepress-theme-ououe/tag?t=config" data-v-6fa02a1c><!--[-->config<!--]--></a></nav><!--]--></hgroup></section><!--[--><!--]--><article id="VPContent" class="main vp-doc" data-v-9482e268><!--[--><!--]--><div style="position:relative;" data-v-9482e268><div><p>主题的所有配置项</p><h2 id="options" tabindex="-1">Options <a class="header-anchor" href="#options" aria-label="Permalink to &quot;Options&quot;">​</a></h2><h3 id="logo" tabindex="-1">logo <a class="header-anchor" href="#logo" aria-label="Permalink to &quot;logo&quot;">​</a></h3><ul><li>Type: <code>string</code> | <code>object</code></li></ul><p>网站的 logo 图片</p><div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#B392F0;">logo</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">&#39;https://avatars.githubusercontent.com/u/23313167?v=4&#39;</span><span style="color:#E1E4E8;">,</span></span>
+import{_ as s,o as n,c as a,g as l}from"./chunks/framework.777da7bb.js";const F=JSON.parse('{"title":"主题配置","description":"","frontmatter":{"title":"主题配置","descript":"如何配置博客的分页","date":"2023-08-19T00:00:00.000Z","image":"https://picsum.photos/536/354?random=10","index":10,"tags":["reference","config"],"categories":["docs"]},"headers":[],"relativePath":"posts/config.md","filePath":"posts/config.md","lastUpdated":1692503301000}'),p={name:"posts/config.md"},o=l(`<p>主题的所有配置项</p><h2 id="options" tabindex="-1">Options <a class="header-anchor" href="#options" aria-label="Permalink to &quot;Options&quot;">​</a></h2><h3 id="logo" tabindex="-1">logo <a class="header-anchor" href="#logo" aria-label="Permalink to &quot;logo&quot;">​</a></h3><ul><li>Type: <code>string</code> | <code>object</code></li></ul><p>网站的 logo 图片</p><div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#B392F0;">logo</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">&#39;https://avatars.githubusercontent.com/u/23313167?v=4&#39;</span><span style="color:#E1E4E8;">,</span></span>
 <span class="line"><span style="color:#6A737D;">// 或者</span></span>
 <span class="line"><span style="color:#B392F0;">logo</span><span style="color:#E1E4E8;">: {</span></span>
 <span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#B392F0;">src</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">&#39;https://avatars.githubusercontent.com/u/23313167?v=4&#39;</span><span style="color:#E1E4E8;">,</span></span>
@@ -113,24 +91,24 @@
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * Before using, you need to add some files to your directory</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```md</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`md</span></span>
 <span class="line"><span style="color:#6A737D;">   * // [page].md</span></span>
 <span class="line"><span style="color:#6A737D;">   * ---</span></span>
 <span class="line"><span style="color:#6A737D;">   * layout: page</span></span>
 <span class="line"><span style="color:#6A737D;">   * ---</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```js</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`js</span></span>
 <span class="line"><span style="color:#6A737D;">   * // [page].paths.ts</span></span>
 <span class="line"><span style="color:#6A737D;">   * export default {</span></span>
 <span class="line"><span style="color:#6A737D;">   *   paths() { ... }</span></span>
 <span class="line"><span style="color:#6A737D;">   * }</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * Refer to [examples](https://github.com/tolking/vitepress-theme-ououe/blob/main/docs/%5Bpage%5D.paths.ts) for more information</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * </span><span style="color:#F97583;">@example</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```ts</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`ts</span></span>
 <span class="line"><span style="color:#6A737D;">   * // When you only have a pagination in the root directory</span></span>
 <span class="line"><span style="color:#6A737D;">   * {</span></span>
 <span class="line"><span style="color:#6A737D;">   *   group: 7,</span></span>
@@ -139,7 +117,7 @@
 <span class="line"><span style="color:#6A737D;">   * // When you have multiple directories that require pagination</span></span>
 <span class="line"><span style="color:#6A737D;">   * [</span></span>
 <span class="line"><span style="color:#6A737D;">   *   {</span></span>
-<span class="line"><span style="color:#6A737D;">   *     match: (path) =&gt; /^\/($|index|page-)/.test(path), // match the root directory</span></span>
+<span class="line"><span style="color:#6A737D;">   *     match: (path) =&gt; /^\\/($|index|page-)/.test(path), // match the root directory</span></span>
 <span class="line"><span style="color:#6A737D;">   *     // ...</span></span>
 <span class="line"><span style="color:#6A737D;">   *   },</span></span>
 <span class="line"><span style="color:#6A737D;">   *   {</span></span>
@@ -148,16 +126,16 @@
 <span class="line"><span style="color:#6A737D;">   *   },</span></span>
 <span class="line"><span style="color:#6A737D;">   *   // ...</span></span>
 <span class="line"><span style="color:#6A737D;">   * ]</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`</span></span>
 <span class="line"><span style="color:#6A737D;">   */</span></span>
 <span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#FFAB70;">pagination</span><span style="color:#F97583;">?:</span><span style="color:#E1E4E8;"> </span><span style="color:#B392F0;">MaybeArray</span><span style="color:#E1E4E8;">&lt;</span><span style="color:#B392F0;">PaginationItem</span><span style="color:#E1E4E8;">&gt;</span></span>
 <span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#6A737D;">/**</span></span>
-<span class="line"><span style="color:#6A737D;">   * If `boolean`, whether to parse and include excerpt? (rendered as HTML)</span></span>
+<span class="line"><span style="color:#6A737D;">   * If \`boolean\`, whether to parse and include excerpt? (rendered as HTML)</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * If `function`, control how the excerpt is extracted from the content.</span></span>
+<span class="line"><span style="color:#6A737D;">   * If \`function\`, control how the excerpt is extracted from the content.</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * If `string`, define a custom separator to be used for extracting the</span></span>
-<span class="line"><span style="color:#6A737D;">   * excerpt. Default separator is `---` if `excerpt` is `true`.</span></span>
+<span class="line"><span style="color:#6A737D;">   * If \`string\`, define a custom separator to be used for extracting the</span></span>
+<span class="line"><span style="color:#6A737D;">   * excerpt. Default separator is \`---\` if \`excerpt\` is \`true\`.</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * </span><span style="color:#F97583;">@default</span><span style="color:#6A737D;"> </span><span style="color:#E1E4E8;">true</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
@@ -169,11 +147,11 @@
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * Before using, you need to add a files to your directory. (eq. tag.md -&gt; &#39;/tag&#39;)</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`</span></span>
 <span class="line"><span style="color:#6A737D;">   * ---</span></span>
 <span class="line"><span style="color:#6A737D;">   * layout: tag</span></span>
 <span class="line"><span style="color:#6A737D;">   * ---</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * </span><span style="color:#F97583;">@example</span><span style="color:#6A737D;"> &#39;/tag&#39;</span></span>
 <span class="line"><span style="color:#6A737D;">   */</span></span>
@@ -183,11 +161,11 @@
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * Before using, you need to add a files to your directory. (eq. category.md -&gt; &#39;/category&#39;)</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`</span></span>
 <span class="line"><span style="color:#6A737D;">   * ---</span></span>
 <span class="line"><span style="color:#6A737D;">   * layout: category</span></span>
 <span class="line"><span style="color:#6A737D;">   * ---</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * </span><span style="color:#F97583;">@example</span><span style="color:#6A737D;"> &#39;/category&#39;</span></span>
 <span class="line"><span style="color:#6A737D;">   */</span></span>
@@ -201,7 +179,7 @@
 <span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#6A737D;">/**</span></span>
 <span class="line"><span style="color:#6A737D;">   * Whether to show the last updated time?</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * Before using, you need add `lastUpdated` options to your config</span></span>
+<span class="line"><span style="color:#6A737D;">   * Before using, you need add \`lastUpdated\` options to your config</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * </span><span style="color:#F97583;">@example</span><span style="color:#6A737D;"> { text: &#39;Last updated&#39;, format(date) { ... }}</span></span>
 <span class="line"><span style="color:#6A737D;">   */</span></span>
@@ -309,9 +287,9 @@
 <span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#6A737D;">/**</span></span>
 <span class="line"><span style="color:#6A737D;">   * File name for generating [dynamic-routes](https://vitepress.dev/guide/routing#dynamic-routes)</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * </span><span style="color:#F97583;">@example</span><span style="color:#6A737D;"> n === 1 ? &#39;index&#39; : `page-${n}`</span></span>
+<span class="line"><span style="color:#6A737D;">   * </span><span style="color:#F97583;">@example</span><span style="color:#6A737D;"> n === 1 ? &#39;index&#39; : \`page-\${n}\`</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * If you are not using the recommended format, you need to custom `pagination -&gt; formatPage` match</span></span>
+<span class="line"><span style="color:#6A737D;">   * If you are not using the recommended format, you need to custom \`pagination -&gt; formatPage\` match</span></span>
 <span class="line"><span style="color:#6A737D;">   */</span></span>
 <span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#FFAB70;">page</span><span style="color:#F97583;">:</span><span style="color:#E1E4E8;"> </span><span style="color:#79B8FF;">string</span></span>
 <span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#6A737D;">/**</span></span>
@@ -369,24 +347,24 @@
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * Before using, you need to add some files to your directory</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```md</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`md</span></span>
 <span class="line"><span style="color:#6A737D;">   * // [page].md</span></span>
 <span class="line"><span style="color:#6A737D;">   * ---</span></span>
 <span class="line"><span style="color:#6A737D;">   * layout: page</span></span>
 <span class="line"><span style="color:#6A737D;">   * ---</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```js</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`js</span></span>
 <span class="line"><span style="color:#6A737D;">   * // [page].paths.ts</span></span>
 <span class="line"><span style="color:#6A737D;">   * export default {</span></span>
 <span class="line"><span style="color:#6A737D;">   *   paths() { ... }</span></span>
 <span class="line"><span style="color:#6A737D;">   * }</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * Refer to [examples](https://github.com/tolking/vitepress-theme-ououe/blob/main/docs/%5Bpage%5D.paths.ts) for more information</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * </span><span style="color:#D73A49;">@example</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```ts</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`ts</span></span>
 <span class="line"><span style="color:#6A737D;">   * // When you only have a pagination in the root directory</span></span>
 <span class="line"><span style="color:#6A737D;">   * {</span></span>
 <span class="line"><span style="color:#6A737D;">   *   group: 7,</span></span>
@@ -395,7 +373,7 @@
 <span class="line"><span style="color:#6A737D;">   * // When you have multiple directories that require pagination</span></span>
 <span class="line"><span style="color:#6A737D;">   * [</span></span>
 <span class="line"><span style="color:#6A737D;">   *   {</span></span>
-<span class="line"><span style="color:#6A737D;">   *     match: (path) =&gt; /^\/($|index|page-)/.test(path), // match the root directory</span></span>
+<span class="line"><span style="color:#6A737D;">   *     match: (path) =&gt; /^\\/($|index|page-)/.test(path), // match the root directory</span></span>
 <span class="line"><span style="color:#6A737D;">   *     // ...</span></span>
 <span class="line"><span style="color:#6A737D;">   *   },</span></span>
 <span class="line"><span style="color:#6A737D;">   *   {</span></span>
@@ -404,16 +382,16 @@
 <span class="line"><span style="color:#6A737D;">   *   },</span></span>
 <span class="line"><span style="color:#6A737D;">   *   // ...</span></span>
 <span class="line"><span style="color:#6A737D;">   * ]</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`</span></span>
 <span class="line"><span style="color:#6A737D;">   */</span></span>
 <span class="line"><span style="color:#24292E;">  </span><span style="color:#E36209;">pagination</span><span style="color:#D73A49;">?:</span><span style="color:#24292E;"> </span><span style="color:#6F42C1;">MaybeArray</span><span style="color:#24292E;">&lt;</span><span style="color:#6F42C1;">PaginationItem</span><span style="color:#24292E;">&gt;</span></span>
 <span class="line"><span style="color:#24292E;">  </span><span style="color:#6A737D;">/**</span></span>
-<span class="line"><span style="color:#6A737D;">   * If `boolean`, whether to parse and include excerpt? (rendered as HTML)</span></span>
+<span class="line"><span style="color:#6A737D;">   * If \`boolean\`, whether to parse and include excerpt? (rendered as HTML)</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * If `function`, control how the excerpt is extracted from the content.</span></span>
+<span class="line"><span style="color:#6A737D;">   * If \`function\`, control how the excerpt is extracted from the content.</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * If `string`, define a custom separator to be used for extracting the</span></span>
-<span class="line"><span style="color:#6A737D;">   * excerpt. Default separator is `---` if `excerpt` is `true`.</span></span>
+<span class="line"><span style="color:#6A737D;">   * If \`string\`, define a custom separator to be used for extracting the</span></span>
+<span class="line"><span style="color:#6A737D;">   * excerpt. Default separator is \`---\` if \`excerpt\` is \`true\`.</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * </span><span style="color:#D73A49;">@default</span><span style="color:#6A737D;"> </span><span style="color:#24292E;">true</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
@@ -425,11 +403,11 @@
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * Before using, you need to add a files to your directory. (eq. tag.md -&gt; &#39;/tag&#39;)</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`</span></span>
 <span class="line"><span style="color:#6A737D;">   * ---</span></span>
 <span class="line"><span style="color:#6A737D;">   * layout: tag</span></span>
 <span class="line"><span style="color:#6A737D;">   * ---</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * </span><span style="color:#D73A49;">@example</span><span style="color:#6A737D;"> &#39;/tag&#39;</span></span>
 <span class="line"><span style="color:#6A737D;">   */</span></span>
@@ -439,11 +417,11 @@
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * Before using, you need to add a files to your directory. (eq. category.md -&gt; &#39;/category&#39;)</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`</span></span>
 <span class="line"><span style="color:#6A737D;">   * ---</span></span>
 <span class="line"><span style="color:#6A737D;">   * layout: category</span></span>
 <span class="line"><span style="color:#6A737D;">   * ---</span></span>
-<span class="line"><span style="color:#6A737D;">   * ```</span></span>
+<span class="line"><span style="color:#6A737D;">   * \`\`\`</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * </span><span style="color:#D73A49;">@example</span><span style="color:#6A737D;"> &#39;/category&#39;</span></span>
 <span class="line"><span style="color:#6A737D;">   */</span></span>
@@ -457,7 +435,7 @@
 <span class="line"><span style="color:#24292E;">  </span><span style="color:#6A737D;">/**</span></span>
 <span class="line"><span style="color:#6A737D;">   * Whether to show the last updated time?</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * Before using, you need add `lastUpdated` options to your config</span></span>
+<span class="line"><span style="color:#6A737D;">   * Before using, you need add \`lastUpdated\` options to your config</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
 <span class="line"><span style="color:#6A737D;">   * </span><span style="color:#D73A49;">@example</span><span style="color:#6A737D;"> { text: &#39;Last updated&#39;, format(date) { ... }}</span></span>
 <span class="line"><span style="color:#6A737D;">   */</span></span>
@@ -565,9 +543,9 @@
 <span class="line"><span style="color:#24292E;">  </span><span style="color:#6A737D;">/**</span></span>
 <span class="line"><span style="color:#6A737D;">   * File name for generating [dynamic-routes](https://vitepress.dev/guide/routing#dynamic-routes)</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * </span><span style="color:#D73A49;">@example</span><span style="color:#6A737D;"> n === 1 ? &#39;index&#39; : `page-${n}`</span></span>
+<span class="line"><span style="color:#6A737D;">   * </span><span style="color:#D73A49;">@example</span><span style="color:#6A737D;"> n === 1 ? &#39;index&#39; : \`page-\${n}\`</span></span>
 <span class="line"><span style="color:#6A737D;">   *</span></span>
-<span class="line"><span style="color:#6A737D;">   * If you are not using the recommended format, you need to custom `pagination -&gt; formatPage` match</span></span>
+<span class="line"><span style="color:#6A737D;">   * If you are not using the recommended format, you need to custom \`pagination -&gt; formatPage\` match</span></span>
 <span class="line"><span style="color:#6A737D;">   */</span></span>
 <span class="line"><span style="color:#24292E;">  </span><span style="color:#E36209;">page</span><span style="color:#D73A49;">:</span><span style="color:#24292E;"> </span><span style="color:#005CC5;">string</span></span>
 <span class="line"><span style="color:#24292E;">  </span><span style="color:#6A737D;">/**</span></span>
@@ -594,10 +572,4 @@
 <span class="line"><span style="color:#24292E;">  },</span></span>
 <span class="line"><span style="color:#24292E;">  </span><span style="color:#6A737D;">// eslint-disable-next-line @typescript-eslint/no-explicit-any</span></span>
 <span class="line"><span style="color:#24292E;">  </span><span style="color:#E36209;">options</span><span style="color:#D73A49;">?:</span><span style="color:#24292E;"> </span><span style="color:#005CC5;">any</span><span style="color:#24292E;">,</span></span>
-<span class="line"><span style="color:#24292E;">) </span><span style="color:#D73A49;">=&gt;</span><span style="color:#24292E;"> </span><span style="color:#005CC5;">void</span></span></code></pre></div></details></div></div><!--[--><!--]--><footer class="article-time" data-v-9482e268><p data-v-9482e268>Create Time: <time datetime="8/19/2023" data-v-9482e268>8/19/2023</time></p><p data-v-9482e268>Last Updated: <time datetime="8/20/2023" data-v-9482e268>8/20/2023</time></p></footer></article><!--[--><!--]--><section name="posts" appear class="main article-list article-pagination" data-v-9482e268><article style="--vp-posts-delay:0s;" class="article-item"><a class="VPLink link item-image" href="/vitepress-theme-ououe/posts/frontmatter" title="frontmatter"><!--[--><!--[--><img class="VPImage img" loading="lazy" src="https://picsum.photos/536/354?random=4" alt="frontmatter" data-v-b8e8c6a7><!--]--><!--]--></a><div class="item-content"><!--[--><!--]--><a class="VPLink link" href="/vitepress-theme-ououe/posts/frontmatter"><!--[--><h2 class="title">frontmatter</h2><!--]--></a><div class="excerpt"><p>如何配置博客文章的 frontmatter 信息</p>
-</div><nav name="scale" appear class="nav-tags"><a class="VPLink link" href="/vitepress-theme-ououe/category?t=docs" data-v-6fa02a1c><!--[-->docs<!--]--></a><span style="flex-grow:1;" class="link separator" data-v-6fa02a1c></span><a class="VPLink link" href="/vitepress-theme-ououe/tag?t=guide" data-v-6fa02a1c><!--[-->guide<!--]--></a><a class="VPLink link" href="/vitepress-theme-ououe/tag?t=frontmatter" data-v-6fa02a1c><!--[-->frontmatter<!--]--></a></nav><!--[--><!--]--></div></article><article style="--vp-posts-delay:0.1s;" class="article-item"><a class="VPLink link item-image" href="/vitepress-theme-ououe/posts/slots" title="插槽"><!--[--><!--[--><img class="VPImage img" loading="lazy" src="https://picsum.photos/536/354?random=11" alt="插槽" data-v-b8e8c6a7><!--]--><!--]--></a><div class="item-content"><!--[--><!--]--><a class="VPLink link" href="/vitepress-theme-ououe/posts/slots"><!--[--><h2 class="title">插槽</h2><!--]--></a><div class="excerpt"><p>通过内部提供的插槽可以很轻松的扩展主题界面</p>
-</div><nav name="scale" appear class="nav-tags"><a class="VPLink link" href="/vitepress-theme-ououe/category?t=docs" data-v-6fa02a1c><!--[-->docs<!--]--></a><span style="flex-grow:1;" class="link separator" data-v-6fa02a1c></span><a class="VPLink link" href="/vitepress-theme-ououe/tag?t=reference" data-v-6fa02a1c><!--[-->reference<!--]--></a><a class="VPLink link" href="/vitepress-theme-ououe/tag?t=slots" data-v-6fa02a1c><!--[-->slots<!--]--></a></nav><!--[--><!--]--></div></article></section><!--[--><!--]--><!--teleport start--><!--teleport end--></section><!--[--><!--]--><footer class="main footer" data-v-4826754c><p class="copyright" data-v-4826754c>tolking © 2023</p><!----></footer><!--[--><!--]--><!--]--></div>
-    <script>window.__VP_HASH_MAP__=JSON.parse("{\"posts_sitemap.md\":\"27dca3b5\",\"posts_pagination.md\":\"ecdcff81\",\"posts_tag.md\":\"dfd51092\",\"tag.md\":\"2991f8e1\",\"index.md\":\"47381352\",\"posts_slots.md\":\"daa567ea\",\"category.md\":\"3cbb9f9d\",\"posts_rss.md\":\"bf721aad\",\"posts_quickstart.md\":\"df5d66cf\",\"posts_config.md\":\"27150847\",\"posts_pwa.md\":\"ec630cc7\",\"posts_frontmatter.md\":\"e4fb29b8\"}");function deserializeFunctions(r){return Array.isArray(r)?r.map(deserializeFunctions):typeof r=="object"&&r!==null?Object.keys(r).reduce((t,n)=>(t[n]=deserializeFunctions(r[n]),t),{}):typeof r=="string"&&r.startsWith("_vp-fn_")?new Function(`return ${r.slice(7)}`)():r};window.__VP_SITE_DATA__=deserializeFunctions(JSON.parse("{\"lang\":\"zn-CN\",\"dir\":\"ltr\",\"title\":\"vitepress-theme-ououe\",\"description\":\"A blog theme based on vitepress\",\"base\":\"/vitepress-theme-ououe/\",\"head\":[],\"appearance\":true,\"themeConfig\":{\"cover\":{\"src\":\"https://picsum.photos/1920/1080?random\",\"alt\":\"cover image\"},\"nav\":[{\"text\":\"Home\",\"link\":\"/\"},{\"text\":\"Tag\",\"link\":\"/tag\"},{\"text\":\"Category\",\"link\":\"/category\"}],\"tag\":\"/tag\",\"category\":\"/category\",\"socialLinks\":[{\"ariaLabel\":\"GitHub\",\"link\":\"https://github.com/tolking/vitepress-theme-ououe\",\"icon\":\"github\"}],\"pagination\":{\"prev\":\"<-\",\"next\":\"->\",\"sort\":\"_vp-fn_(a, b) => a.index - b.index\"},\"excerpt\":\"<!-- more -->\",\"createTime\":{\"text\":\"Create Time\",\"format\":\"_vp-fn_(date) => new Date(date).toLocaleDateString()\"},\"lastUpdated\":{\"text\":\"Last Updated\",\"format\":\"_vp-fn_(date) => new Date(date).toLocaleDateString()\"},\"footer\":{\"copyright\":\"tolking © 2023\"},\"search\":{\"provider\":\"local\"}},\"locales\":{},\"scrollOffset\":90,\"cleanUrls\":true}"));</script>
-    
-  </body>
-</html>
+<span class="line"><span style="color:#24292E;">) </span><span style="color:#D73A49;">=&gt;</span><span style="color:#24292E;"> </span><span style="color:#005CC5;">void</span></span></code></pre></div></details>`,52),e=[o];function t(c,r,y,i,E,A){return n(),a("div",null,e)}const g=s(p,[["render",t]]);export{F as __pageData,g as default};
