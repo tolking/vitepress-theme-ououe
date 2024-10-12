@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useData } from 'vitepress'
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
 import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue'
@@ -18,14 +19,24 @@ defineEmits<{
 }>()
 defineSlots<HeaderSlots>()
 
-const { site, theme } = useData<Theme>()
+const { site, theme, localeIndex } = useData<Theme>()
+
+const homeLink = computed(() => {
+  return (
+    site.value.locales[localeIndex.value]?.link ||
+    (localeIndex.value === 'root' ? '/' : `/${localeIndex.value}/`)
+  )
+})
 </script>
 
 <template>
   <header class="header">
     <div class="main header-content">
       <slot name="header-left" />
-      <VPLink class="header-logo">
+      <VPLink
+        :href="homeLink"
+        class="header-logo"
+      >
         <VPImage
           v-if="theme.logo"
           :image="theme.logo"
