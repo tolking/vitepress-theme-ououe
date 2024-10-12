@@ -82,12 +82,17 @@ function handleChange(event: Event) {
   --vp-tag-hover-bg: var(--vp-button-brand-hover-bg);
   --vp-tag-hover-text: var(--vp-button-brand-hover-text);
 }
+.tag-item > .visually-hidden:focus-visible + .item-inner {
+  outline: 2px solid var(--vp-tag-bg);
+  outline-offset: 1px;
+}
 .tag-item .item-inner {
   padding: 0.4rem 1rem;
   border-radius: 0.5rem;
   border: 1px solid var(--vp-tag-border);
   background-color: var(--vp-tag-bg);
   color: var(--vp-tag-text);
+  cursor: pointer;
   transition: var(--vp-transition-all);
 }
 .tag-item .item-inner:hover {
