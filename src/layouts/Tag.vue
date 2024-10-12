@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useData, useRoute, withBase } from 'vitepress'
+import { useData, useRoute, withBase, type DefaultTheme } from 'vitepress'
 import { useTag } from '../composables/index'
 import VPCover from '../components/VPCover.vue'
 import VPTagList from '../components/VPTagList.vue'
@@ -22,7 +22,7 @@ const title = computed(() => {
   })
 
   if (nav) {
-    return nav.text
+    return (nav as DefaultTheme.NavItemWithLink).text
   } else {
     const layout: string = frontmatter.value.layout
     return layout.replace(/^([a-z])/, (_, i) => i.toUpperCase())

@@ -23,11 +23,6 @@
   margin-right: calc(0px - var(--vp-size-space));
 }
 
-a:focus-visible,
-button:focus-visible {
-  outline-color: var(--vp-c-brand-lighter);
-}
-
 @media (min-width: 768px) {
   .main {
     padding-left: calc(var(--vp-size-space) * 2);
