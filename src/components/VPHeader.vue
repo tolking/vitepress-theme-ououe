@@ -6,9 +6,9 @@ import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue'
 import VPNavBarMenu from 'vitepress/dist/client/theme-default/components/VPNavBarMenu.vue'
 import VPNavBarSearch from 'vitepress/dist/client/theme-default/components/VPNavBarSearch.vue'
 import VPNavBarTranslations from 'vitepress/dist/client/theme-default/components/VPNavBarTranslations.vue'
-import VPNavBarAppearance from 'vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue'
 import VPNavBarSocialLinks from 'vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue'
 import VPNavBarHamburger from 'vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue'
+import VPAppearance from './VPAppearance.vue'
 import type { HeaderSlots, Theme } from '../types/index'
 
 defineProps<{
@@ -51,7 +51,12 @@ const homeLink = computed(() => {
       <slot name="header-search-before" />
       <VPNavBarSearch class="search" />
       <VPNavBarTranslations class="translations" />
-      <VPNavBarAppearance class="appearance" />
+      <div
+        v-if="site.appearance && site.appearance !== 'force-dark'"
+        class="VPNavBarAppearance"
+      >
+        <VPAppearance />
+      </div>
       <VPNavBarSocialLinks class="social-links" />
       <VPNavBarHamburger
         :active="isScreenOpen"
@@ -109,10 +114,19 @@ const homeLink = computed(() => {
 .header .header-content .social-links {
   margin-left: var(--vp-size-space);
 }
+.VPNavBarAppearance {
+  display: none;
+  margin-left: var(--vp-size-space);
+}
 
 @media (min-width: 768px) {
   .header .header-content .header-logo {
     flex-grow: 0;
+  }
+
+  .VPNavBarAppearance {
+    display: flex;
+    align-items: center;
   }
 }
 </style>
