@@ -1,5 +1,6 @@
 import { computed } from 'vue'
 import { useData, useRoute } from 'vitepress'
+import { useLangs } from './index'
 import { data } from '../posts.data'
 import { isFunction, toArray } from '../utils/index'
 import type { Theme, PaginationParams } from '../types/index'
@@ -7,6 +8,7 @@ import type { Theme, PaginationParams } from '../types/index'
 export function usePagination() {
   const route = useRoute()
   const { theme, page } = useData<Theme>()
+  const { prefix, isLocaleUrl } = useLangs()
 
   /** Obtain the pagination config that matches the current route from the config file */
   const config = computed(() => {
@@ -18,7 +20,9 @@ export function usePagination() {
       if (isFunction(item.match)) {
         return item.match(route.path)
       } else if (item.dir) {
-        const regExp = new RegExp(`^/(${toArray(item.dir).join('|')})/`)
+        const regExp = new RegExp(
+          `^${prefix.value}(${toArray(item.dir).join('|')})/`,
+        )
         return regExp.test(route.path)
       }
     })
@@ -27,7 +31,7 @@ export function usePagination() {
   /** Get all posts */
   const posts = computed(() => {
     if (!data.length) return []
-    let list = data
+    let list = data.filter((item) => isLocaleUrl(item.url))
 
     if (config.value?.filter) {
       list = list.filter(config.value.filter)

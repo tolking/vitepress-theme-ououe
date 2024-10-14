@@ -1,5 +1,6 @@
 import { computed, ref, watch } from 'vue'
 import { useData, inBrowser, useRoute } from 'vitepress'
+import { useLangs } from './index'
 import { data } from '../posts.data'
 import { Classifiable } from '../utils/index'
 import type { Theme } from '../types/index'
@@ -9,15 +10,16 @@ const classifiable = new Classifiable(data)
 export function useTag() {
   const route = useRoute()
   const { frontmatter, theme } = useData<Theme>()
+  const { isLocaleUrl } = useLangs()
 
   const current = ref<string>(getQuery())
 
   const list = computed(() => {
     switch (frontmatter.value.layout) {
       case 'tag':
-        return classifiable.allTags
+        return classifiable.getAllTags((item) => isLocaleUrl(item.url))
       case 'category':
-        return classifiable.allCategories
+        return classifiable.getAllCategories((item) => isLocaleUrl(item.url))
       default:
         return undefined
     }
@@ -28,9 +30,13 @@ export function useTag() {
 
     switch (frontmatter.value.layout) {
       case 'tag':
-        return classifiable.getPostsByTag(current.value)
+        return classifiable.getPostsByTag(current.value, (item) =>
+          isLocaleUrl(item.url),
+        )
       case 'category':
-        return classifiable.getPostsByCategory(current.value)
+        return classifiable.getPostsByCategory(current.value, (item) =>
+          isLocaleUrl(item.url),
+        )
       default:
         return undefined
     }

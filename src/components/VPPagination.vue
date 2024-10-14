@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { type DefaultTheme, useData, useRoute, withBase } from 'vitepress'
-import { usePagination } from '../composables/index'
+import { useLangs, usePagination } from '../composables/index'
 import { isActive } from 'vitepress/dist/client/shared'
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
 import type { Theme, PaginationParams } from '../types'
@@ -9,6 +9,7 @@ import type { Theme, PaginationParams } from '../types'
 const route = useRoute()
 const { page } = useData<Theme>()
 const { config, posts } = usePagination()
+const { prefix } = useLangs()
 
 const pagination = computed(() => {
   const params = page.value.params as PaginationParams | undefined
@@ -70,19 +71,19 @@ const prev = computed(() => findPageInfo(-1))
 const next = computed(() => findPageInfo(1))
 
 function formatPage(index: number): DefaultTheme.NavItemWithLink {
-  const link = index === 1 ? '/' : `/page-${index}`
-  let prefix: string | undefined
+  const link = index === 1 ? '' : `page-${index}`
+  let dir: string | undefined
 
   if (config.value?.dir) {
     if (Array.isArray(config.value.dir) && config.value.dir.length === 1) {
-      prefix = config.value.dir[0]
+      dir = config.value.dir[0]
     } else if (!Array.isArray(config.value.dir)) {
-      prefix = config.value.dir
+      dir = config.value.dir
     }
   }
 
   return {
-    link: `${prefix ? `/${prefix}` : ''}${link}`,
+    link: `${prefix.value}${dir ? `${dir}/` : ''}${link}`,
     text: String(index),
   }
 }

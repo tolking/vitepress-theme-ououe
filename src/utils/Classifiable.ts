@@ -23,28 +23,34 @@ export class Classifiable {
     this.categories = _categories
   }
 
-  get allTags() {
-    return this.toCountMap('tags')
+  getAllTags(filter: (item: PostsItem) => boolean) {
+    return this.toCountMap('tags', filter)
   }
 
-  get allCategories() {
-    return this.toCountMap('categories')
+  getAllCategories(filter: (item: PostsItem) => boolean) {
+    return this.toCountMap('categories', filter)
   }
 
-  getPostsByTag(tag: string) {
-    return this.tags[tag]
+  getPostsByTag(tag: string, filter: (item: PostsItem) => boolean) {
+    return this.tags[tag]?.filter(filter)
   }
 
-  getPostsByCategory(category: string) {
-    return this.categories[category]
+  getPostsByCategory(category: string, filter: (item: PostsItem) => boolean) {
+    return this.categories[category]?.filter(filter)
   }
 
-  toCountMap(type: 'tags' | 'categories') {
+  toCountMap(
+    type: 'tags' | 'categories',
+    filter: (item: PostsItem) => boolean,
+  ) {
     const obj: Record<string, number> = {}
 
     for (const key in this[type]) {
-      const len = this[type][key]?.length
-      obj[key] = len || 0
+      const len = this[type][key]?.filter(filter)?.length ?? 0
+
+      if (len) {
+        obj[key] = len
+      }
     }
 
     return obj
