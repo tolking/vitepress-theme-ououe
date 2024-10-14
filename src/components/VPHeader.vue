@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { useData } from 'vitepress'
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
 import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue'
@@ -8,6 +7,7 @@ import VPNavBarSearch from 'vitepress/dist/client/theme-default/components/VPNav
 import VPNavBarTranslations from 'vitepress/dist/client/theme-default/components/VPNavBarTranslations.vue'
 import VPNavBarSocialLinks from 'vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue'
 import VPNavBarHamburger from 'vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue'
+import { useLangs } from '../composables/index'
 import VPAppearance from './VPAppearance.vue'
 import type { HeaderSlots, Theme } from '../types/index'
 
@@ -19,14 +19,8 @@ defineEmits<{
 }>()
 defineSlots<HeaderSlots>()
 
-const { site, theme, localeIndex } = useData<Theme>()
-
-const homeLink = computed(() => {
-  return (
-    site.value.locales[localeIndex.value]?.link ||
-    (localeIndex.value === 'root' ? '/' : `/${localeIndex.value}/`)
-  )
-})
+const { site, theme } = useData<Theme>()
+const { prefix } = useLangs()
 </script>
 
 <template>
@@ -34,7 +28,7 @@ const homeLink = computed(() => {
     <div class="main header-content">
       <slot name="header-left" />
       <VPLink
-        :href="homeLink"
+        :href="prefix"
         class="header-logo"
       >
         <VPImage
@@ -124,7 +118,8 @@ const homeLink = computed(() => {
     flex-grow: 0;
   }
 
-  .VPNavBarAppearance {
+  .VPNavBarAppearance,
+  .VPNavBarTranslations {
     display: flex;
     align-items: center;
   }
