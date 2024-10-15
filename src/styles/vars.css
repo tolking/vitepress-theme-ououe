@@ -20,6 +20,7 @@
   /* the vars of reading progress */
   --vp-reading-size: 3px;
   --vp-reading-gradient: none;
+  --vp-reading-z-index: 100;
 }
 
 @media (min-width: 768px) {

@@ -84,7 +84,7 @@ function getProgressStyle() {
 <style scoped>
 .reading-progress {
   position: fixed;
-  z-index: var(--vp-z-index-footer);
+  z-index: var(--vp-reading-z-index);
   overflow: hidden;
 }
 .reading-progress .progress {
