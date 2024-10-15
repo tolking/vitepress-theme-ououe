@@ -1,6 +1,6 @@
 ---
-title: Theme Configuration
-descript: How to configure blog pagination
+title: 主题配置
+descript: 如何配置博客的分页
 date: 2023-08-19
 image: https://picsum.photos/536/354?random=10
 index: 10
@@ -8,10 +8,10 @@ tags:
   - reference
   - config
 categories:
-  - docs
+  - 文档功能
 ---
 
-All configuration options for the theme
+主题的所有配置项
 
 <!-- more -->
 
@@ -21,16 +21,16 @@ All configuration options for the theme
 
 - Type: `string` | `object`
 
-The logo image of the website
+网站的 logo 图片
 
 ```ts
 logo: 'https://avatars.githubusercontent.com/u/23313167?v=4',
-// Or
+// 或者
 logo: {
   src: 'https://avatars.githubusercontent.com/u/23313167?v=4',
   alt: 'logo',
 },
-// Or
+// 或者
 logo: {
   light: 'https://avatars.githubusercontent.com/u/23313167?v=4',
   dark: 'https://avatars.githubusercontent.com/u/23313167?v=4',
@@ -42,13 +42,13 @@ logo: {
 
 - Type: `string` | `object`
 
-The cover image of the website, used in the same way as the logo
+网站的封面图片，使用方式同 logo
 
 ### nav
 
 - Type: `array`
 
-The navigation bar of the website, configured the same as in vitepress
+网站的导航栏，和 vitepress 具有相同的配置
 
 ```ts
 nav: [
@@ -62,7 +62,7 @@ nav: [
 
 - Type: `array`
 
-The social links of the website, configured the same as in vitepress
+网站的社交链接，和 vitepress 具有相同的配置
 
 ```ts
 socialLinks: [
@@ -78,14 +78,14 @@ socialLinks: [
 
 - Type: `object | array`
 
-Pagination configuration, for detailed usage please refer to [Pagination](./pagination.md)
+分页的配置，具体的使用方法请参考[分页](./pagination.md)
 
 ### excerpt
 
 - Type: `string | boolean | function`
 - default: `---`
 
-How to split the article excerpt
+如何分割文章的摘要
 
 ```ts
 excerpt: '<!-- more -->',
@@ -95,7 +95,7 @@ excerpt: '<!-- more -->',
 
 - Type: `string`
 
-The link address of the tag. Before using, you need to refer to [Tags and Categories](./tag.md) to configure the tag page
+标签的链接地址。在使用前，你需要参考[标签和分类](./tag.md)来配置 tag 的页面
 
 ```ts
 tag: '/tag',
@@ -105,7 +105,7 @@ tag: '/tag',
 
 - Type: `string`
 
-The link address of the category. Before using, you need to refer to [Tags and Categories](./tag.md) to configure the category page
+分类的链接地址。在使用前，你需要参考[标签和分类](./tag.md)来配置 category 的页面
 
 ```ts
 category: '/category',
@@ -115,11 +115,11 @@ category: '/category',
 
 - Type: `object`
 
-How to display the creation time
+如何显示创建时间
 
 ```ts
 createTime: {
-  text: 'Creation Time',
+  text: '创建时间',
   format: (date) => new Date(date).toLocaleDateString(),
 },
 ```
@@ -128,11 +128,11 @@ createTime: {
 
 - Type: `object`
 
-How to display the last update time
+如何显示最后更新时间
 
 ```ts
 lastUpdated: {
-  text: 'Last Updated',
+  text: '更新时间',
   format: (date) => new Date(date).toLocaleDateString(),
 },
 ```
@@ -141,13 +141,13 @@ lastUpdated: {
 
 - Type: `boolean | 'top' | 'bottom' | 'left' | 'right'`
 
-How to display the reading progress bar, only effective on article pages
+如何显示阅读进度条，仅在文章页面有效
 
 ### footer
 
 - Type: `object`
 
-The content displayed in the footer
+页脚的显示内容
 
 ```ts
 footer: {
@@ -159,7 +159,7 @@ footer: {
 
 - Type: `object`
 
-Search configuration, for detailed usage please refer to [Search](https://vitepress.dev/reference/default-theme-search)
+搜索的配置，具体的使用方法请参考[搜索](https://vitepress.dev/reference/default-theme-search)
 
 ```ts
 search: {
@@ -167,6 +167,6 @@ search: {
 },
 ```
 
-:::details Type Declaration
+:::details 类型声明
 <<< @./../src/types/theme.ts
 :::
