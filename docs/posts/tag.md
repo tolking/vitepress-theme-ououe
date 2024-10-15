@@ -1,6 +1,6 @@
 ---
-title: 标签和分类
-descript: 如何配置博客的标签和分类
+title: Tags and Categories
+descript: How to configure tags and categories for the blog
 date: 2023-08-19
 image: https://picsum.photos/536/354?random=2
 index: 2
@@ -11,13 +11,13 @@ categories:
   - docs
 ---
 
-如何快速显示所有文章的标签和分类数据
+How to quickly display tags and categories data for all articles
 
 <!-- more -->
 
-## 配置
+## Configuration
 
-由于 vitepress 目前不能够生成纯动态的页面，所以需要增加 `tag.md` `category.md` 生成对应信息
+Since vitepress currently cannot generate purely dynamic pages, you need to add `tag.md` and `category.md` to generate the corresponding information
 
 -> tag.md
 
@@ -35,24 +35,24 @@ layout: category
 ---
 ```
 
-然后在配置中通过 [tag 和 category](./config.md#tag) 属性配置对应链接
+Then configure the corresponding links through the [tag and category](./config.md#tag) attributes in the configuration
 
-## 使用
+## Usage
 
-在文档中的 [frontmatter](./frontmatter.md) 中增加相关信息即可
+Add relevant information in the [frontmatter](./frontmatter.md) of the document
 
 ```md
 ---
 tags:
   - vitepress
-  - vitepress-themt-ououe
+  - vitepress-theme-ououe
 categories:
   - blog
   - theme
 ---
 ```
 
-或者
+Or
 
 ```md
 ---

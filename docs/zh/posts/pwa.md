@@ -1,22 +1,22 @@
 ---
 title: pwa
-descript: How to add PWA support to the blog
+descript: 如何为博客增加PWA支持
 date: 2023-08-27
 image: https://picsum.photos/536/354?random=22
 index: 22
 tags:
   - pwa
 categories:
-  - enhance
+  - 增强功能
 ---
 
-Add PWA support to the blog
+为博客增加 PWA 支持
 
 <!-- more -->
 
-## Installation
+## 安装
 
-First, you need to install the [@vite-pwa/vitepress](https://vite-pwa-org.netlify.app/frameworks/vitepress.html) plugin
+首先需要安装 [@vite-pwa/vitepress](https://vite-pwa-org.netlify.app/frameworks/vitepress.html) 插件
 
 ::: code-group
 
@@ -34,7 +34,7 @@ yarn add -D @vite-pwa/vitepress
 
 :::
 
-## Configuration
+## 配置
 
 -> .vitepress/config.ts
 
@@ -50,7 +50,7 @@ export default withPwa(
 )
 ```
 
-Then inject the component into the slot
+然后在插槽中注入组件
 
 -> .vitepress/theme/index.ts
 
@@ -69,4 +69,4 @@ export default {
 }
 ```
 
-For more details, refer to the [@vite-pwa/vitepress](https://vite-pwa-org.netlify.app/frameworks/vitepress.html) documentation
+更多细节参考 [@vite-pwa/vitepress](https://vite-pwa-org.netlify.app/frameworks/vitepress.html) 文档

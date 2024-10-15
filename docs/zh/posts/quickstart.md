@@ -1,5 +1,5 @@
 ---
-title: Quick Start
+title: 快速开始
 description:
 date: 2023-08-19
 image: https://picsum.photos/536/354?random=1
@@ -7,16 +7,16 @@ index: 1
 tags:
   - guide
 categories:
-  - docs
+  - 文档功能
 ---
 
-How to quickly use vitepress-theme-ououe as your blog theme
+如何快速使用 vitepress-theme-ououe 作为你的博客主题
 
 <!-- more -->
 
-## Installation
+## 安装
 
-Since this theme is based on [vitepress](https://vitepress.dev/), you need to install it accordingly
+由于本主题是基于 [vitepress](https://vitepress.dev/) 实现，所以你需要根据情况安装它
 
 ::: code-group
 
@@ -34,9 +34,9 @@ yarn add vitepress vitepress-theme-ououe
 
 :::
 
-## Usage
+## 使用
 
-1. Import the theme
+1. 引入主题
 
 -> .vitepress/theme/index.ts
 
@@ -46,7 +46,7 @@ import Theme from 'vitepress-theme-ououe'
 export default Theme
 ```
 
-2. Add the theme configuration file
+2. 增加主题的配置文件
 
 -> .vitepress/config.ts
 
@@ -62,9 +62,9 @@ export default defineConfigWithTheme<Theme>({
 })
 ```
 
-[Detailed configuration information](./config.md)
+[详细的配置信息](./config.md)
 
-## Recommended Directory Structure
+## 建议目录结构
 
 ```
 +- blog
@@ -81,4 +81,4 @@ export default defineConfigWithTheme<Theme>({
   ...
 ```
 
-Among them, posts is the directory mainly for placing articles
+其中 posts 是主要放置文章的目录

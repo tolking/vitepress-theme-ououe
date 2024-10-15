@@ -1,6 +1,6 @@
 ---
-title: Slots
-descript: How to extend the theme
+title: 插槽
+descript: 如何扩展主题
 date: 2023-08-19
 image: https://picsum.photos/536/354?random=11
 index: 11
@@ -8,14 +8,14 @@ tags:
   - reference
   - slots
 categories:
-  - docs
+  - 文档功能
 ---
 
-You can easily extend the theme interface through the provided slots
+通过内部提供的插槽可以很轻松的扩展主题界面
 
 <!-- more -->
 
-## Usage
+## 使用
 
 -> .vitepress/theme/index.ts
 
@@ -34,7 +34,7 @@ export default {
 }
 ```
 
-## All Slots
+## 全部插槽
 
 - header-before
 - header-left
@@ -63,6 +63,6 @@ export default {
 - footer-before
 - footer-after
 
-:::details Type Declaration
+:::details 类型声明
 <<< @./../src/types/slots.ts
 :::

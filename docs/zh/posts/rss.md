@@ -1,22 +1,22 @@
 ---
-title: RSS Subscription
-descript: How to add RSS to the blog
+title: RSS 订阅
+descript: 如何为博客增加RSS
 date: 2023-08-24
 image: https://picsum.photos/536/354?random=21
 index: 21
 tags:
   - rss
 categories:
-  - enhance
+  - 增强功能
 ---
 
-The theme does not include RSS by default, but you can generate it with simple configuration
+主题默认是不包含 RSS 的，但你可以通过简单的配置来生成它
 
 <!-- more -->
 
-## Installation
+## 安装
 
-First, you need to install a plugin to generate RSS, such as [feed](https://github.com/ekalinin/sitemap.js#readme)
+首先需要安装生成 RSS 的插件，如 [feed](https://github.com/ekalinin/sitemap.js#readme)
 
 ::: code-group
 
@@ -34,11 +34,11 @@ yarn add -D feed
 
 :::
 
-## Configuration
+## 配置
 
-Generate RSS using the [buildEnd](https://vitepress.dev/reference/site-config#buildend) hook
+通过 [buildEnd](https://vitepress.dev/reference/site-config#buildend) 钩子来生成 RSS
 
-The following configuration is for reference only and should be modified according to actual conditions
+下面配置仅供参考，根据实际情况修改
 
 -> .vitepress/config.ts
 
@@ -58,7 +58,7 @@ export default defineConfigWithTheme<Theme>({
   buildEnd: genRSS,
 })
 
-async function genRSS(siteConfig: SiteConfig<Theme>) {
+function genRSS(siteConfig: SiteConfig<Theme>) {
   const baseUrl = `https://my.blog`
   const feed = new Feed({
     title: siteConfig.site.title,

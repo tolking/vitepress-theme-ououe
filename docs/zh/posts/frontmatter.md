@@ -1,6 +1,6 @@
 ---
 title: frontmatter
-descript: How to configure the frontmatter of the blog
+descript: 如何配置博客的 frontmatter
 date: 2023-08-19
 image: https://picsum.photos/536/354?random=4
 index: 4
@@ -8,32 +8,32 @@ tags:
   - guide
   - frontmatter
 categories:
-  - docs
+  - 文档功能
 ---
 
-How to configure the frontmatter information of blog posts
+如何配置博客文章的 frontmatter 信息
 
 <!-- more -->
 
-## Usage
+## 使用
 
-- A standard article's frontmatter
+- 一个标准文章的 frontmatter
 
 ```md
 ---
-title: Title of the article
-descript: Description of the article
+title: 文章的标题
+descript: 文章的描述
 date: 2023-08-19
-image: Image link (optional)
+image: 图片链接 (可以省略)
 tags:
   - guide
   - frontmatter
 categories:
-  - docs
+  - 文档功能
 ---
 ```
 
-- Some parameters to control the interface
+- 一些控制界面的参数
 
 ```md
 ---
@@ -45,7 +45,7 @@ readingProgress: false (`boolean | 'top' | 'bottom' | 'left' | 'right'`)
 ---
 ```
 
-- Special attribute layout
+- 特殊的属性 layout
 
 ```md
 ---
@@ -53,4 +53,4 @@ layout: article (`'page' | 'tag' | 'category' | 'article'`)
 ---
 ```
 
-Refer to [Tags and Categories](./tag.md) and [Pagination](./pagination.md) for usage
+参考 [标签和分类](./tag.md) 和 [分页](./pagination.md) 使用
