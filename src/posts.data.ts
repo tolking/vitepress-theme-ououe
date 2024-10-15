@@ -9,22 +9,10 @@ export { data }
 type GlobalThis = typeof globalThis & { VITEPRESS_CONFIG: SiteConfig<Theme> }
 
 const config = (globalThis as GlobalThis).VITEPRESS_CONFIG
-const themeConfig = config.site.themeConfig
-const pagination = themeConfig.pagination && toArray(themeConfig.pagination)
-const postsDir = pagination?.reduce((all, item) => {
-  if (Array.isArray(item.dir)) {
-    all = all.concat(item.dir)
-  } else if (item.dir) {
-    all.push(item.dir)
-  }
-  return all
-}, [] as string[])
-const pattern = postsDir?.length
-  ? postsDir.map((item) => `${item}/*.md`)
-  : `${config.userConfig.srcDir || '**'}/*.md`
+const pattern = getPattern()
 
 export default createContentLoader(pattern, {
-  excerpt: themeConfig.excerpt ?? true,
+  excerpt: config.site.themeConfig.excerpt ?? true,
   transform(raw): PostsItem[] {
     const posts: PostsItem[] = []
 
@@ -53,3 +41,26 @@ export default createContentLoader(pattern, {
     return posts
   },
 })
+
+function getPattern() {
+  const dirs = new Set<string>()
+
+  if (config.site.themeConfig.pagination) {
+    toArray(config.site.themeConfig.pagination).forEach((item) => {
+      item.dir && toArray(item.dir).forEach((item) => dirs.add(item))
+    })
+  }
+  if (config.site.locales.length) {
+    Object.values(config.site.locales).forEach((locale) => {
+      if (locale.themeConfig?.pagination) {
+        toArray(locale.themeConfig.pagination).forEach((item) => {
+          item.dir && toArray(item.dir).forEach((item) => dirs.add(item))
+        })
+      }
+    })
+  }
+
+  return dirs.size > 0
+    ? [...dirs].map((item) => `${item}/*.md`)
+    : `${config.userConfig.srcDir || '**'}/*.md`
+}
