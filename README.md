@@ -2,7 +2,7 @@
 
 > A blog theme based on vitepress
 
-[Documentation](https://tolking.github.io/vitepress-theme-ououe)
+[Documentation and Demo](https://tolking.github.io/vitepress-theme-ououe)
 
 ![image](./docs/public/vitepress-theme-ououe.jpg)
 
