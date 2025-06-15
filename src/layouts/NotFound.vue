@@ -23,15 +23,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <section
-    id="VPContent"
-    class="not-found main"
-  >
+  <section id="VPContent" class="not-found main">
     <slot name="not-found-top" />
-    <div
-      ref="titleRef"
-      class="content"
-    >
+    <div ref="titleRef" class="content">
       <span class="text">404</span>
       <span class="title">PAGE NOT FOUND</span>
     </div>

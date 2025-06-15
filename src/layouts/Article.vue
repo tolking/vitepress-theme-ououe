@@ -48,27 +48,15 @@ const lastUpdated = computed(() => {
         class="article-tags"
       />
     </VPCover>
-    <slot
-      name="article-top"
-      :frontmatter="frontmatter"
-    />
-    <article
-      id="VPContent"
-      class="main vp-doc"
-    >
-      <slot
-        name="article-content-before"
-        :frontmatter="frontmatter"
-      />
+    <slot name="article-top" :frontmatter="frontmatter" />
+    <article id="VPContent" class="main vp-doc">
+      <slot name="article-content-before" :frontmatter="frontmatter" />
       <Content />
-      <slot
-        name="article-content-after"
-        :frontmatter="frontmatter"
-      />
+      <slot name="article-content-after" :frontmatter="frontmatter" />
       <footer
         v-if="
           (frontmatter.createTime !== false && theme.createTime) ||
-            (frontmatter.lastUpdated !== false && theme.lastUpdated)
+          (frontmatter.lastUpdated !== false && theme.lastUpdated)
         "
         class="article-time"
       >
@@ -82,32 +70,20 @@ const lastUpdated = computed(() => {
         </p>
       </footer>
     </article>
-    <slot
-      name="article-pagination-before"
-      :frontmatter="frontmatter"
-    />
+    <slot name="article-pagination-before" :frontmatter="frontmatter" />
     <VPArticleList
       v-if="frontmatter.articlePagination !== false"
       :list="list"
       class="article-pagination"
     >
       <template #article-item-top="scope">
-        <slot
-          name="article-item-top"
-          v-bind="scope"
-        />
+        <slot name="article-item-top" v-bind="scope" />
       </template>
       <template #article-item-bottom="scope">
-        <slot
-          name="article-item-bottom"
-          v-bind="scope"
-        />
+        <slot name="article-item-bottom" v-bind="scope" />
       </template>
     </VPArticleList>
-    <slot
-      name="article-bottom"
-      :frontmatter="frontmatter"
-    />
+    <slot name="article-bottom" :frontmatter="frontmatter" />
     <VPReadingProgress />
   </section>
 </template>

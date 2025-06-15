@@ -27,15 +27,8 @@ const { prefix } = useLangs()
   <header class="header">
     <div class="main header-content">
       <slot name="header-left" />
-      <VPLink
-        :href="prefix"
-        class="header-logo"
-      >
-        <VPImage
-          v-if="theme.logo"
-          :image="theme.logo"
-          class="logo"
-        />
+      <VPLink :href="prefix" class="header-logo">
+        <VPImage v-if="theme.logo" :image="theme.logo" class="logo" />
         <template v-else>
           {{ site.title }}
         </template>

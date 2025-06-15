@@ -11,12 +11,7 @@ defineSlots<ArticleListSlots>()
 </script>
 
 <template>
-  <TransitionGroup
-    name="posts"
-    tag="section"
-    appear
-    class="main article-list"
-  >
+  <TransitionGroup name="posts" tag="section" appear class="main article-list">
     <article
       v-for="(item, index) in list"
       :key="item.url"
@@ -37,34 +32,18 @@ defineSlots<ArticleListSlots>()
         />
       </VPLink>
       <div class="item-content">
-        <slot
-          name="article-item-top"
-          :item="item"
-        />
+        <slot name="article-item-top" :item="item" />
         <VPLink :href="item.url">
           <h2 class="title">
             {{ item.title }}
           </h2>
         </VPLink>
-        <div
-          v-if="item.excerpt"
-          class="excerpt"
-          v-html="item.excerpt"
-        />
-        <p
-          v-else-if="item.description"
-          class="excerpt"
-        >
+        <div v-if="item.excerpt" class="excerpt" v-html="item.excerpt" />
+        <p v-else-if="item.description" class="excerpt">
           {{ item.categories }}
         </p>
-        <VPNavTags
-          :tags="item.tags"
-          :categories="item.categories"
-        />
-        <slot
-          name="article-item-bottom"
-          :item="item"
-        />
+        <VPNavTags :tags="item.tags" :categories="item.categories" />
+        <slot name="article-item-bottom" :item="item" />
       </div>
     </article>
   </TransitionGroup>

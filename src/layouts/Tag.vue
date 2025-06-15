@@ -32,21 +32,11 @@ const title = computed(() => {
 
 <template>
   <section class="tag">
-    <VPCover
-      :title="title"
-      description=""
-    />
+    <VPCover :title="title" description="" />
     <slot name="tag-top" />
-    <VPTagList
-      id="VPContent"
-      v-model="current"
-      :list="list"
-    >
+    <VPTagList id="VPContent" v-model="current" :list="list">
       <template #tag-item="scope">
-        <slot
-          name="tag-item"
-          v-bind="scope"
-        />
+        <slot name="tag-item" v-bind="scope" />
       </template>
     </VPTagList>
     <slot name="tag-after" />

@@ -34,11 +34,7 @@ const { theme } = useData<Theme>()
     >
       {{ tags?.length && categories?.length && separator ? '|' : '' }}
     </span>
-    <VPLink
-      v-for="tag in tags"
-      :key="tag"
-      :href="`${theme.tag}?t=${tag}`"
-    >
+    <VPLink v-for="tag in tags" :key="tag" :href="`${theme.tag}?t=${tag}`">
       {{ tag }}
     </VPLink>
   </TransitionGroup>
