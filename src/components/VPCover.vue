@@ -37,34 +37,16 @@ const coverStyle = computed(() => {
 </script>
 
 <template>
-  <section
-    :class="{ 'with-cover': coverStyle }"
-    class="cover"
-  >
-    <div
-      v-if="coverStyle"
-      :style="coverStyle"
-      class="cover-bg"
-    />
+  <section :class="{ 'with-cover': coverStyle }" class="cover">
+    <div v-if="coverStyle" :style="coverStyle" class="cover-bg" />
     <hgroup class="cover-title">
-      <Transition
-        name="scale"
-        mode="out-in"
-        appear
-      >
-        <h1
-          :key="title"
-          class="title"
-        >
+      <Transition name="scale" mode="out-in" appear>
+        <h1 :key="title" class="title">
           {{ title }}
         </h1>
       </Transition>
       <slot>
-        <Transition
-          name="posts"
-          mode="out-in"
-          appear
-        >
+        <Transition name="posts" mode="out-in" appear>
           <p class="description">
             {{ description }}
           </p>

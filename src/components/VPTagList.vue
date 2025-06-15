@@ -40,12 +40,8 @@ function handleChange(event: Event) {
         name="tagList"
         class="visually-hidden"
         @change="handleChange"
-      >
-      <slot
-        name="tag-item"
-        :tag="tag"
-        :count="count"
-      >
+      />
+      <slot name="tag-item" :tag="tag" :count="count">
         <div class="item-inner">
           <span>{{ tag }}</span>
           <span class="count">({{ count }})</span>

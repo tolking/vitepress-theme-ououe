@@ -14,21 +14,12 @@ const { list } = usePagination()
   <section class="page">
     <VPCover />
     <slot name="page-top" />
-    <VPArticleList
-      id="VPContent"
-      :list="list"
-    >
+    <VPArticleList id="VPContent" :list="list">
       <template #article-item-top="scope">
-        <slot
-          name="article-item-top"
-          v-bind="scope"
-        />
+        <slot name="article-item-top" v-bind="scope" />
       </template>
       <template #article-item-bottom="scope">
-        <slot
-          name="article-item-bottom"
-          v-bind="scope"
-        />
+        <slot name="article-item-bottom" v-bind="scope" />
       </template>
     </VPArticleList>
     <slot name="page-pagination-before" />

@@ -68,15 +68,8 @@ function getProgressStyle() {
 
 <template>
   <Teleport to="body">
-    <div
-      v-if="show"
-      :class="type"
-      class="reading-progress"
-    >
-      <div
-        :style="progressStyle"
-        class="progress"
-      />
+    <div v-if="show" :class="type" class="reading-progress">
+      <div :style="progressStyle" class="progress" />
     </div>
   </Teleport>
 </template>

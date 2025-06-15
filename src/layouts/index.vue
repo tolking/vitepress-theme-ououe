@@ -27,10 +27,7 @@ provide('close-screen', closeScreen)
 <template>
   <VPSkipLink />
   <slot name="header-before" />
-  <VPHeader
-    :is-screen-open="isScreenOpen"
-    @toggle-screen="toggleScreen"
-  >
+  <VPHeader :is-screen-open="isScreenOpen" @toggle-screen="toggleScreen">
     <template #header-left>
       <slot name="header-left" />
     </template>
@@ -46,11 +43,7 @@ provide('close-screen', closeScreen)
   </VPHeader>
   <VPNavScreen :open="isScreenOpen" />
   <slot name="header-after" />
-  <Transition
-    name="page"
-    mode="out-in"
-    appear
-  >
+  <Transition name="page" mode="out-in" appear>
     <NotFound v-if="page.isNotFound">
       <template #not-found-top>
         <slot name="not-found-top" />
@@ -70,16 +63,10 @@ provide('close-screen', closeScreen)
         <slot name="page-bottom" />
       </template>
       <template #article-item-top="scope">
-        <slot
-          name="article-item-top"
-          v-bind="scope"
-        />
+        <slot name="article-item-top" v-bind="scope" />
       </template>
       <template #article-item-bottom="scope">
-        <slot
-          name="article-item-bottom"
-          v-bind="scope"
-        />
+        <slot name="article-item-bottom" v-bind="scope" />
       </template>
     </Page>
     <Tag v-else-if="layout === 'tag' || layout === 'category'">
@@ -93,60 +80,33 @@ provide('close-screen', closeScreen)
         <slot name="tag-bottom" />
       </template>
       <template #tag-item="scope">
-        <slot
-          name="tag-item"
-          v-bind="scope"
-        />
+        <slot name="tag-item" v-bind="scope" />
       </template>
     </Tag>
     <Article v-else-if="layout === 'article'">
       <template #article-top="scope">
-        <slot
-          v-bind="scope"
-          name="article-top"
-        />
+        <slot v-bind="scope" name="article-top" />
       </template>
       <template #article-content-before="scope">
-        <slot
-          v-bind="scope"
-          name="article-content-before"
-        />
+        <slot v-bind="scope" name="article-content-before" />
       </template>
       <template #article-content-after="scope">
-        <slot
-          v-bind="scope"
-          name="article-content-after"
-        />
+        <slot v-bind="scope" name="article-content-after" />
       </template>
       <template #article-pagination-before="scope">
-        <slot
-          v-bind="scope"
-          name="article-pagination-before"
-        />
+        <slot v-bind="scope" name="article-pagination-before" />
       </template>
       <template #article-bottom="scope">
-        <slot
-          v-bind="scope"
-          name="article-bottom"
-        />
+        <slot v-bind="scope" name="article-bottom" />
       </template>
       <template #article-item-top="scope">
-        <slot
-          name="article-item-top"
-          v-bind="scope"
-        />
+        <slot name="article-item-top" v-bind="scope" />
       </template>
       <template #article-item-bottom="scope">
-        <slot
-          name="article-item-bottom"
-          v-bind="scope"
-        />
+        <slot name="article-item-bottom" v-bind="scope" />
       </template>
     </Article>
-    <component
-      :is="layout"
-      v-else
-    />
+    <component :is="layout" v-else />
   </Transition>
   <slot name="footer-before" />
   <VPFooter />

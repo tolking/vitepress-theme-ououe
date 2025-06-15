@@ -12,10 +12,7 @@ const { theme, frontmatter } = useData<Theme>()
     :class="theme.footer.nav && 'is-nav'"
     class="main footer"
   >
-    <p
-      v-if="theme.footer.copyright"
-      class="copyright"
-    >
+    <p v-if="theme.footer.copyright" class="copyright">
       {{ theme.footer.copyright }}
     </p>
     <TransitionGroup
