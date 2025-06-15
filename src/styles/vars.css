@@ -14,7 +14,8 @@
   --vp-transition-duration: 0.25s;
   --vp-transition-all: all var(--vp-transition-duration);
   --vp-transition-color: color var(--vp-transition-duration);
-  --vp-transition-transform: transform var(--vp-transition-duration),
+  --vp-transition-transform:
+    transform var(--vp-transition-duration),
     opacity var(--vp-transition-duration);
 
   /* the vars of reading progress */
