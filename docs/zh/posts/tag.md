@@ -45,7 +45,7 @@ layout: category
 ---
 tags:
   - vitepress
-  - vitepress-themt-ououe
+  - vitepress-theme-ououe
 categories:
   - blog
   - theme
