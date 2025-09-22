@@ -32,7 +32,7 @@ function toggleAppearance() {
     Math.max(x, innerWidth - x),
     Math.max(y, innerHeight - y),
   )
-  // @ts-expect-error: Transition API
+
   const transition = document.startViewTransition(async () => {
     isDark.value = !isDark.value
     await nextTick()
@@ -49,6 +49,7 @@ function toggleAppearance() {
       {
         duration: 400,
         easing: 'ease-in',
+        fill: 'both',
         pseudoElement: isDark.value
           ? '::view-transition-old(root)'
           : '::view-transition-new(root)',
